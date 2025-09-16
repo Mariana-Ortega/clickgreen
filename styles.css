@@ -79,29 +79,6 @@ header nav .carrito img:hover {
   height: 300px;
   object-fit: cover;
 }
-.banner-texto {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--texto-claro);
-  text-align: center;
-}
-.banner-texto h2 {
-  font-size: 2.5em;
-  font-weight: bold;
-}
-.banner-texto button {
-  margin-top: 15px;
-  padding: 12px 25px;
-  background: var(--amarillo-boton);
-  border: none;
-  color: var(--texto-claro);
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1em;
-}
 
 /* Categorías */
 .categorias {
