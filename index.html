@@ -4,118 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClickGreen - Tienda Online</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4fff4;
-      color: #333;
-      text-align: center;
-    }
-    header {
-      background: #2e7d32;
-      color: white;
-      padding: 20px;
-    }
-    nav {
-      margin: 10px 0;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #2e7d32;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #1b5e20;
-    }
-    section {
-      padding: 40px 20px;
-    }
-    footer {
-      background: #2e7d32;
-      color: white;
-      padding: 15px;
-      margin-top: 30px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- Encabezado -->
   <header>
-    <div class="logo">🍏 ClickGreen</div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="Imegenes/Logo.png" alt="ClickGreen Logo">
+      </a>
+      <h1>Click Green</h1>
+    </div>
     <nav>
-      <a href="#">Frutas</a>
-      <a href="#">Verduras</a>
-      <a href="#">Orgánicos</a>
-      <a href="#">Combos</a>
-      <a href="#">🛒 Carrito</a>
+      <a href="#">Ingresar</a>
+      <a href="#" class="carrito">
+        <img src="Imegenes/carrito.png" alt="Carrito de compras">
+      </a>
     </nav>
   </header>
 
-  <!-- BANNER -->
+  <!-- Banner principal -->
   <section class="banner">
-    <h1>Bienvenido a ClickGreen</h1>
-    <p>Frutas y verduras frescas directamente a tu hogar.</p>
-    <button>Explorar Productos</button>
+    <a href="productos.html">
+      <img src="imegenes/Banner.png" alt="Vegetales Frescos">
+    </a>
   </section>
 
-  <!-- CATEGORÍAS -->
-  <section class="categorias">
-    <h2>Explora por Categorías</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="" alt="Frutas">
-        <h3>Frutas</h3>
-        <button>Ver más</button>
-      </div>
-      <div class="card">
-        <img src="" alt="Verduras">
-        <h3>Verduras</h3>
-        <button>Ver más</button>
-      </div>
-      <div class="card">
-        <img src=" alt="Orgánicos">
-        <h3>Orgánicos</h3>
-        <button>Ver más</button>
-      </div>
-      <div class="card">
-        <img src="" alt="Combos">
-        <h3>Combos</h3>
-        <button>Ver más</button>
-      </div>
+  <!-- Menú de categorías -->
+  <nav class="categorias">
+    <a href="#">FRUTAS</a>
+    <a href="#">VEGETALES</a>
+    <a href="#">CONGELADOS</a>
+    <a href="#">COMBOS Y PROMOCIONES</a>
+  </nav>
+
+  <!-- Productos -->
+  <section class="productos">
+    <div class="producto">
+      <img src="Fotos editadas/2.Verduras/Tuberculos/11.png" alt="Papas">
+      <h3>$2.000 / libra</h3>
+      <p>Papas</p>
+      <button>AGREGAR AL CARRITO</button>
+    </div>
+    <div class="producto">
+      <img src="Fotos editadas/1.Frutas/Citricas/3.png" alt="Limones verdes">
+      <h3>$1.800 / libra</h3>
+      <p>Limones verdes</p>
+      <button>AGREGAR AL CARRITO</button>
+    </div>
+    <div class="producto">
+      <img src="Fotos editadas/2.Verduras/Tuberculos/12.png" alt="Zanahorias">
+      <h3>$1.500 / libra</h3>
+      <p>Zanahorias</p>
+      <button>AGREGAR AL CARRITO</button>
+    </div>
+    <div class="producto">
+      <img src="Fotos editadas/3.Congelados/Pulpa de fruta/13.png" alt="Pulpa de lulo">
+      <h3>$7.500 / libra</h3>
+      <p>Pulpa de lulo</p>
+      <button>AGREGAR AL CARRITO</button>
     </div>
   </section>
-
-  <!-- PRODUCTOS DESTACADOS -->
-  <section class="destacados">
-    <h2>Productos en Promoción</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="" alt="Mango">
-        <h3>Mango</h3>
-        <p>$4.000 / Kilo</p>
-      </div>
-      <div class="card">
-        <img src="" alt="Tomate">
-        <h3>Tomate</h3>
-        <p>$3.000 / Kilo</p>
-      </div>
-      <div class="card">
-        <img src="" alt="Lechuga">
-        <h3>Lechuga</h3>
-        <p>$2.500 / Unidad</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 ClickGreen | Contacto: info@clickgreen.com</p>
-    <p>🌐 Síguenos en redes sociales</p>
-  </footer>
 </body>
 </html>
+
+
 

@@ -1,0 +1,27 @@
+VEGETALES
+
+Hortalizas:
+Espinaca
+$1.500 - Libra
+$2.800 - kG
+
+Lechuga
+$1.800 - Libra
+$3.400 - Kg
+
+Acelga
+$1.600 - Libra
+$3.000 - Kg
+
+Tuberculos:
+Papa
+$2.000 - Libra
+$3.800 - Kg
+
+Zanahoria
+$1.500 - Libra
+$2.800 - Kg
+
+Yuca
+$1.800 - Libra
+$3.400 - Kg

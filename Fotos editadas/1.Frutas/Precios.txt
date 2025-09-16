@@ -1,0 +1,27 @@
+FRUTAS
+
+Citricas:
+Limón
+$1.800 - Libra
+$3.500 - Kg
+
+Naranja
+$1.500 - Libra
+$2.800 - Kg
+
+Mandarina
+$1.600 - Libra
+$3.000 - Kg
+
+Tropicales:
+Piña
+$1.200 - Libra
+$2.200 - Kg
+
+Mango
+$2.000 - Libra
+$3.800 - Kg
+
+Papaya
+$1.000 - Libra
+$1.900 - Kg
