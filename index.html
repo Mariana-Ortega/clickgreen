@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClickGreen - Tienda Online</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -42,28 +43,79 @@
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header>
-    <h1>🍏 ClickGreen</h1>
-    <p>Tu tienda online de frutas y verduras frescas</p>
+    <div class="logo">🍏 ClickGreen</div>
+    <nav>
+      <a href="#">Frutas</a>
+      <a href="#">Verduras</a>
+      <a href="#">Orgánicos</a>
+      <a href="#">Combos</a>
+      <a href="#">🛒 Carrito</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#">Frutas</a>
-    <a href="#">Verduras</a>
-    <a href="#">Orgánicos</a>
-    <a href="#">Combos</a>
-  </nav>
-
-  <section>
-    <h2>Bienvenido a ClickGreen</h2>
-    <p>
-      Aquí encontrarás productos frescos y saludables para tu familia.  
-      Explora nuestras secciones y descubre la frescura natural.
-    </p>
+  <!-- BANNER -->
+  <section class="banner">
+    <h1>Bienvenido a ClickGreen</h1>
+    <p>Frutas y verduras frescas directamente a tu hogar.</p>
+    <button>Explorar Productos</button>
   </section>
 
+  <!-- CATEGORÍAS -->
+  <section class="categorias">
+    <h2>Explora por Categorías</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="" alt="Frutas">
+        <h3>Frutas</h3>
+        <button>Ver más</button>
+      </div>
+      <div class="card">
+        <img src="" alt="Verduras">
+        <h3>Verduras</h3>
+        <button>Ver más</button>
+      </div>
+      <div class="card">
+        <img src=" alt="Orgánicos">
+        <h3>Orgánicos</h3>
+        <button>Ver más</button>
+      </div>
+      <div class="card">
+        <img src="" alt="Combos">
+        <h3>Combos</h3>
+        <button>Ver más</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS -->
+  <section class="destacados">
+    <h2>Productos en Promoción</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="" alt="Mango">
+        <h3>Mango</h3>
+        <p>$4.000 / Kilo</p>
+      </div>
+      <div class="card">
+        <img src="" alt="Tomate">
+        <h3>Tomate</h3>
+        <p>$3.000 / Kilo</p>
+      </div>
+      <div class="card">
+        <img src="" alt="Lechuga">
+        <h3>Lechuga</h3>
+        <p>$2.500 / Unidad</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 ClickGreen - Todos los derechos reservados</p>
+    <p>© 2025 ClickGreen | Contacto: info@clickgreen.com</p>
+    <p>🌐 Síguenos en redes sociales</p>
   </footer>
 </body>
 </html>
+
