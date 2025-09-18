@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClickGreen - Tienda Online</title>
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Fonts: Londrina Solid -->
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Encabezado -->
@@ -31,35 +34,120 @@
   </section>
 
   <!-- Menú de categorías -->
-  <nav class="categorias">
-    <a href="#">FRUTAS</a>
-    <a href="#">VEGETALES</a>
-    <a href="#">CONGELADOS</a>
-    <a href="#">COMBOS Y PROMOCIONES</a>
+  <nav class="menu-categorias">
+    <ul>
+      <li class="dropdown">
+        <a href="#">FRUTAS</a>
+        <ul class="submenu">
+          <li class="dropdown">
+            <a href="#">Cítricas</a>
+            <ul class="submenu submenu-right">
+              <li><a href="#">Limones</a></li>
+              <li><a href="#">Mandarina</a></li>
+              <li><a href="#">Naranjas</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Tropicales</a>
+            <ul class="submenu submenu-right">
+              <li><a href="#">Piña</a></li>
+              <li><a href="#">Papaya</a></li>
+              <li><a href="#">Mango</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">VEGETALES</a>
+        <ul class="submenu">
+          <li class="dropdown">
+            <a href="#">Hortalizas</a>
+            <ul class="submenu submenu-right">
+              <li><a href="#">Espinaca</a></li>
+              <li><a href="#">Lechuga</a></li>
+              <li><a href="#">Acelga</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Tubérculos</a>
+            <ul class="submenu submenu-right">
+              <li><a href="#">Papas</a></li>
+              <li><a href="#">Zanahorias</a></li>
+              <li><a href="#">Yuca</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">CONGELADOS</a>
+        <ul class="submenu">
+          <li class="dropdown">
+            <a href="#">Pulpa de frutas</a>
+            <ul class="submenu submenu-right">
+              <li><a href="#">Pulpa De Mango</a></li>
+              <li><a href="#"> Pulpa De Piña</a></li>
+              <li><a href="#">Pulpa De Lulo</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Verduras congeladas</a>
+            <ul class="submenu submenu-right">
+              <li><a href="#">Verdura Mixta</a></li>
+              <li><a href="#">Brócoli Mixto</a></li>
+              <li><a href="#">Maíz Tierno</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">COMBOS Y PROMOCIONES</a>
+        <ul class="submenu">
+          <li class="dropdown">
+            <a href="#">Combos Familiares</a>
+            <ul class="submenu submenu-right">
+              <li><a href="#">Combro Frescura</a></li>
+              <li><a href="#">Combo Energía</a></li>
+              <li><a href="#">Combo Salud</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Promociones por temporada</a>
+            <ul class="submenu submenu-right">
+              <li><a href="#">Sadía Veraniega</a></li>
+              <li><a href="#">Durazno Otoño</a></li>
+              <li><a href="#">Uvas Diciembre</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </nav>
 
   <!-- Productos -->
   <section class="productos">
     <div class="producto">
-      <img src="Fotos editadas/2.Verduras/Tuberculos/11.png" alt="Papas">
+      <img src="Fotos editadas/2.Verduras/Tuberculos/Papas.png" alt="Papas">
       <h3>$2.000 / libra</h3>
       <p>Papas</p>
       <button>AGREGAR AL CARRITO</button>
     </div>
     <div class="producto">
-      <img src="Fotos editadas/1.Frutas/Citricas/3.png" alt="Limones verdes">
+      <img src="Fotos editadas/1.Frutas/Citricas/Limones.png" alt="Limones verdes">
       <h3>$1.800 / libra</h3>
       <p>Limones verdes</p>
       <button>AGREGAR AL CARRITO</button>
     </div>
     <div class="producto">
-      <img src="Fotos editadas/2.Verduras/Tuberculos/12.png" alt="Zanahorias">
+      <img src="Fotos editadas/2.Verduras/Tuberculos/Zanahorias.png" alt="Zanahorias">
       <h3>$1.500 / libra</h3>
       <p>Zanahorias</p>
       <button>AGREGAR AL CARRITO</button>
     </div>
     <div class="producto">
-      <img src="Fotos editadas/3.Congelados/Pulpa de fruta/13.png" alt="Pulpa de lulo">
+      <img src="Fotos editadas/3.Congelados/Pulpa de fruta/Lulo.png" alt="Pulpa de lulo">
       <h3>$7.500 / libra</h3>
       <p>Pulpa de lulo</p>
       <button>AGREGAR AL CARRITO</button>
@@ -67,6 +155,7 @@
   </section>
 </body>
 </html>
+
 
 
 
