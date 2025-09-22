@@ -145,7 +145,7 @@ header nav .carrito img {
   top: 0;
   left: 100%;
   transform: none;
-  margin-left: 8px;
+  margin-left: 2px;
   min-width: 150px;
   background-color: #f4a340;
   border-radius: 6px;
@@ -206,3 +206,95 @@ button {
 button:hover {
   background-color: #e88f20;
 }
+
+/*Ventana limones*/
+.modal {
+  display: none; /* Oculta al inicio */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-contenido {
+  background: #d6f5c6;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  display: flex;
+  gap: 20px;
+}
+
+.detalle-producto img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+.info {
+  flex: 1;
+}
+
+.cantidad button {
+  background: orange;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-carrito {
+  background: orange;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+/* Botón cerrar */
+.modal-contenido {
+  position: relative; /* clave para que la X se ubique dentro */
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.cerrar:hover {
+  color: red;
+}
+
+
+/* Contenido del modal */
+.detalle-producto {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* separa la imagen del texto */
+}
+
+/* Imagen a la izquierda */
+.detalle-producto img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+/* Texto más pegado a la derecha */
+.detalle-producto .info {
+  flex: 1;
+  text-align: left;
+  margin-left: 20px;
+}
+
