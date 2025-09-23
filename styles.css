@@ -79,6 +79,14 @@ header nav .carrito img {
   background-color: #5fb130;
 }
 
+/* Menú activo */
+.menu-categorias a.activo {
+  background: #f4a340;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
 /* fila de items principales */
 .menu-categorias > ul {
   display: flex;
@@ -101,7 +109,7 @@ header nav .carrito img {
 
 /* SUBMENÚ de primer nivel (centrado bajo el padre) */
 .menu-categorias > ul > li > .submenu {
-  display: none !important;
+  display: none;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -116,6 +124,11 @@ header nav .carrito img {
 }
 
 /* enlaces dentro de cualquier submenú */
+/* Evita que el submenu-nivel2 empuje hacia abajo */
+.submenu li {
+  position: relative; /* Necesario para que submenu-nivel2 se posicione respecto a este li */
+}
+
 .submenu > li > a {
   display: block;
   color: #fff;
@@ -128,35 +141,11 @@ header nav .carrito img {
   border-radius: 4px;
 }
 
-/* Mostrar el submenú del li que tenga hover (primer nivel) */
+/* Mostrar el submenú de primer nivel en hover */
 .dropdown:hover > .submenu {
   display: block !important;
 }
 
-/* ---------- Sub-submenú (nivel 2) ---------- */
-.submenu .dropdown {
-  position: relative;
-}
-
-/* el sub-submenú aparece a la derecha del padre */
-.submenu .submenu {
-  display: none !important;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  transform: none;
-  margin-left: 2px;
-  min-width: 150px;
-  background-color: #f4a340;
-  border-radius: 6px;
-  padding: 6px 0;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-
-/* Mostrar el sub-submenú solo al hover (ej: Cítricas) */
-.submenu .dropdown:hover > .submenu {
-  display: block !important;
-}
 
 /* Productos */
 .productos {

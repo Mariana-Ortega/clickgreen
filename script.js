@@ -12,3 +12,21 @@ function cambiarCantidad(id, valor) {
   if (cantidad < 0) cantidad = 0;
   cantidadElem.innerText = cantidad;
 }
+
+// FILTRO DE PRODUCTOS
+document.querySelectorAll(".filtro").forEach(boton => {
+  boton.addEventListener("click", e => {
+    e.preventDefault();
+    const filtro = boton.getAttribute("data-filtro");
+    
+    document.querySelectorAll(".producto").forEach(prod => {
+      if (filtro === "todos" || prod.classList.contains(filtro)) {
+        prod.style.display = "block";
+      } else {
+        prod.style.display = "none";
+      }
+    });
+  });
+});
+
+

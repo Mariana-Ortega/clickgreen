@@ -36,91 +36,37 @@
   <!-- Menú de categorías -->
   <nav class="menu-categorias">
     <ul>
+      <li><a href="#" class="filtro" data-filtro="todos">TODOS</a></li>
+
       <li class="dropdown">
         <a href="#">FRUTAS</a>
         <ul class="submenu">
-          <li class="dropdown">
-            <a href="#">Cítricas</a>
-            <ul class="submenu submenu-right">
-              <li><a href="#" onclick="abrirProducto('limones')">Limones</a></li>
-              <li><a href="#">Mandarina</a></li>
-              <li><a href="#">Naranjas</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#">Tropicales</a>
-            <ul class="submenu submenu-right">
-              <li><a href="#">Piña</a></li>
-              <li><a href="#">Papaya</a></li>
-              <li><a href="#">Mango</a></li>
-            </ul>
-          </li>
+          <li><a href="#" class="filtro" data-filtro="citricas">Cítricas</a></li>
+          <li><a href="#" class="filtro" data-filtro="tropicales">Tropicales</a></li>
         </ul>
       </li>
 
       <li class="dropdown">
         <a href="#">VEGETALES</a>
         <ul class="submenu">
-          <li class="dropdown">
-            <a href="#">Hortalizas</a>
-            <ul class="submenu submenu-right">
-              <li><a href="#">Espinaca</a></li>
-              <li><a href="#">Lechuga</a></li>
-              <li><a href="#">Acelga</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#">Tubérculos</a>
-            <ul class="submenu submenu-right">
-              <li><a href="#">Papas</a></li>
-              <li><a href="#">Zanahorias</a></li>
-              <li><a href="#">Yuca</a></li>
-            </ul>
-          </li>
+          <li><a href="#" class="filtro" data-filtro="hortalizas">Hortalizas</a></li>
+          <li><a href="#" class="filtro" data-filtro="tuberculos">Tubérculos</a></li>
         </ul>
       </li>
 
       <li class="dropdown">
         <a href="#">CONGELADOS</a>
         <ul class="submenu">
-          <li class="dropdown">
-            <a href="#">Pulpa de frutas</a>
-            <ul class="submenu submenu-right">
-              <li><a href="#">Pulpa De Mango</a></li>
-              <li><a href="#"> Pulpa De Piña</a></li>
-              <li><a href="#">Pulpa De Lulo</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#">Verduras congeladas</a>
-            <ul class="submenu submenu-right">
-              <li><a href="#">Verdura Mixta</a></li>
-              <li><a href="#">Brócoli Mixto</a></li>
-              <li><a href="#">Maíz Tierno</a></li>
-            </ul>
-          </li>
+          <li><a href="#" class="filtro" data-filtro="Pulpa">Pulpa de frutas</a></li>
+          <li><a href="#" class="filtro" data-filtro="Verduras">Verduras congeladas</a></li>
         </ul>
       </li>
 
       <li class="dropdown">
         <a href="#">COMBOS Y PROMOCIONES</a>
         <ul class="submenu">
-          <li class="dropdown">
-            <a href="#">Combos Familiares</a>
-            <ul class="submenu submenu-right">
-              <li><a href="#">Combo Frescura</a></li>
-              <li><a href="#">Combo Energía</a></li>
-              <li><a href="#">Combo Salud</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#">Promociones por temporada</a>
-            <ul class="submenu submenu-right">
-              <li><a href="#">Sandía Veraniega</a></li>
-              <li><a href="#">Durazno Otoño</a></li>
-              <li><a href="#">Uvas Diciembre</a></li>
-            </ul>
-          </li>
+          <li><a href="#" class="filtro" data-filtro="combos">Combos Familiares</a></li>
+          <li><a href="#" class="filtro" data-filtro="promociones">Promociones por temporada</a></li>
         </ul>
       </li>
     </ul>
@@ -128,107 +74,153 @@
 
   <!-- Productos -->
   <section class="productos">
-    <div class="producto">
+    <div class="producto tuberculos">
       <img src="Fotos editadas/2.Verduras/Tuberculos/Papas.png" alt="Papas">
       <h3>$2.000 / libra</h3>
       <p>Papas</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('papas')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto citricas">
       <img src="Fotos editadas/1.Frutas/Citricas/Limones.png" alt="Limones verdes">
       <h3>$1.800 / libra</h3>
       <p>Limones verdes</p>
       <button onclick="abrirProducto('limones')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto tuberculos">
       <img src="Fotos editadas/2.Verduras/Tuberculos/Zanahorias.png" alt="Zanahorias">
       <h3>$1.500 / libra</h3>
       <p>Zanahorias</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('zanahorias')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto Pulpa">
       <img src="Fotos editadas/3.Congelados/Pulpa de fruta/Lulo.png" alt="Pulpa de lulo">
       <h3>$7.500 / libra</h3>
       <p>Pulpa de lulo</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('pulpadelulo')">AGREGAR AL CARRITO</button>
     </div>
-    </div>
-    <div class="producto">
-      <img src="Fotos editadas/1.Frutas/Citricas/Narajas.png" alt="Narajas">
+    <div class="producto citricas">
+      <img src="Fotos editadas/1.Frutas/Citricas/Narajas.png" alt="Naranjas">
       <h3>$1.500 / libra</h3>
       <p>Naranjas</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('naranjas')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto hortalizas">
       <img src="Fotos editadas/2.Verduras/Hortalizas/Acelga.png" alt="Acelga">
       <h3>$1.600 / libra</h3>
       <p>Acelga</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('acelga')">AGREGAR AL CARRITO</button>
     </div>
-    </div>
-    <div class="producto">
+    <div class="producto combos">
       <img src="Fotos editadas/4. Combos y promociones/Combos familiares/Combo Salud.png" alt="Combo Salud">
       <h3>$14.500 / 1 libra cada producto</h3>
       <p>Combo Salud</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('combosalud')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto tropicales">
       <img src="Fotos editadas/1.Frutas/Tropicales/Papaya.png" alt="Papaya">
-      <h3>$1.00 / libra</h3>
+      <h3>$1.000 / libra</h3>
       <p>Papaya</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('papaya')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto tuberculos">
       <img src="Fotos editadas/2.Verduras/Tuberculos/Yuca.png" alt="Yuca">
       <h3>$1.800 / libra </h3>
       <p>Yuca</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('yuca')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto hortalizas">
       <img src="Fotos editadas/2.Verduras/Hortalizas/Espinaca.png" alt="Espinaca">
       <h3>$1.500 / libra</h3>
       <p>Espinaca</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('espinaca')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto Verduras">
       <img src="Fotos editadas/3.Congelados/Vegetales/BrocoliMix.png" alt="BrocoliMix">
       <h3>$5.000 / libra</h3>
       <p>Brocolí Mix</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('brocolimix')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto Pulpa">
       <img src="Fotos editadas/3.Congelados/Pulpa de fruta/Mango.png" alt="Pulpa de Mango">
       <h3>$4.500 / libra</h3>
       <p>Pulpa de mango</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('pulpademango')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto combos">
       <img src="Fotos editadas/4. Combos y promociones/Combos familiares/ComboEnergia.png" alt="ComboEnergia">
       <h3>$13.000 / 1 libra cada producto</h3>
       <p>Combo Energía</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('comboenergia')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto tropicales">
       <img src="Fotos editadas/1.Frutas/Tropicales/Piña.png" alt="Piña">
-      <h3>$1,200 / libra</h3>
+      <h3>$1.200 / libra</h3>
       <p>Piña</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('piña')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto promociones">
       <img src="Fotos editadas/4. Combos y promociones/promociones de temporada/Uvas.png" alt="Uvas">
-      <h3>$9,800 / libra</h3>
-      <p>Uvas de Diciembre</p>
-      <button>AGREGAR AL CARRITO</button>
+      <h3>$9.800 / libra</h3>
+      <p>Uvas en Diciembre</p>
+      <button onclick="abrirProducto('uvas')">AGREGAR AL CARRITO</button>
     </div>
-    <div class="producto">
+    <div class="producto citricas">
       <img src="Fotos editadas/1.Frutas/Citricas/Mandarinas.png" alt="Mandarinas">
-      <h3>$1,600 / libra</h3>
+      <h3>$1.600 / libra</h3>
       <p>Mandarinas</p>
-      <button>AGREGAR AL CARRITO</button>
+      <button onclick="abrirProducto('mandarinas')">AGREGAR AL CARRITO</button>
+    </div>
+    <div class="producto tropicales">
+      <img src="Fotos editadas/1.Frutas/Tropicales/Mango.png" alt="Mango">
+      <h3>$2.000 / libra</h3>
+      <p>Mango</p>
+      <button onclick="abrirProducto('mango')">AGREGAR AL CARRITO</button>
+    </div>
+    <div class="producto hortalizas">
+      <img src="Fotos editadas/2.Verduras/Hortalizas/Lechuga.png" alt="Lechuga">
+      <h3>$1.800 / libra</h3>
+      <p>Lechuga</p>
+      <button onclick="abrirProducto('lechuga')">AGREGAR AL CARRITO</button>
+    </div>
+    <div class="producto Pulpa">
+      <img src="Fotos editadas/3.Congelados/Pulpa de fruta/Piña.png" alt="Pulpa de piña">
+      <h3>$4.000 / libra</h3>
+      <p>Pulpa de piña</p>
+      <button onclick="abrirProducto('pulpadepiña')">AGREGAR AL CARRITO</button>
+    </div>
+    <div class="producto Verduras">
+      <img src="Fotos editadas/3.Congelados/Vegetales/MaizTierno.png" alt="MaizTierno">
+      <h3>$4.200 / libra</h3>
+      <p>Maiz Tierno</p>
+      <button onclick="abrirProducto('maiztierno')">AGREGAR AL CARRITO</button>
+    </div>
+    <div class="producto Verduras">
+      <img src="Fotos editadas/3.Congelados/Vegetales/Verduras mix.png" alt="VerdurasMix">
+      <h3>$4.500 / libra</h3>
+      <p>Verduras Mix</p>
+      <button onclick="abrirProducto('verdurasmix')">AGREGAR AL CARRITO</button>
+    </div>
+    <div class="producto combos">
+      <img src="Fotos editadas/4. Combos y promociones/Combos familiares/ComboFrescura.png" alt="ComboFrescura">
+      <h3>$11.500 / 1 libra de cada producto</h3>
+      <p>Combo Frescura</p>
+      <button onclick="abrirProducto('combofrescura')">AGREGAR AL CARRITO</button>
+    </div>
+    <div class="producto promociones">
+      <img src="Fotos editadas/4. Combos y promociones/promociones de temporada/Durazno.png" alt="Durazno">
+      <h3>$7.000 / libra</h3>
+      <p>Durazno de otoño</p>
+      <button onclick="abrirProducto('durazno')">AGREGAR AL CARRITO</button>
+    </div>
+    <div class="producto promociones">
+      <img src="Fotos editadas/4. Combos y promociones/promociones de temporada/Sandias.png" alt="Sandias">
+      <h3>$4.200 / libra</h3>
+      <p>Sandias veraniegas</p>
+      <button onclick="abrirProducto('sandias')">AGREGAR AL CARRITO</button>
     </div>
   </section>
 
-  <!-- Ventana descriptiva (oculta al inicio) -->
+  <!-- Modal Limones -->
   <div id="modal-limones" class="modal">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('limones')">&times;</span>
@@ -262,10 +254,773 @@
     </div>
   </div>
 
+<!-- Modal de Naranjas -->
+<div id="modal-naranjas" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarProducto('naranjas')">&times;</span>
+      
+    <div class="detalle-producto">
+      <img src="Fotos editadas/1.Frutas/Citricas/Narajas.png" alt="Naranjas">
+        
+      <div class="info">
+        <h2>NARANJAS</h2>
+        <p><strong>$1.500 / libra</strong> &nbsp;&nbsp; <strong>$3.000 / kilogramo</strong></p>
+        <p><b>Descripción:</b> Naranja jugosa, rica en vitamina C, perfecta para jugos naturales y consumo directo. Presentación: 1 libra o 1 kg.</p>
+        
+        <!-- selector de unidad -->
+        <label>Presentación:</label>
+        <select>
+          <option value="libra">Libra</option>
+          <option value="kg">Kilogramo</option>
+        </select>
+        
+        <!-- selector de cantidad -->
+        <div class="cantidad">
+          <button onclick="cambiarCantidad('naranjas', -1)">-</button>
+          <span id="cantidad-naranjas">0</span>
+          <button onclick="cambiarCantidad('naranjas', 1)">+</button>
+        </div>
+        
+        <!-- botón agregar -->
+        <button class="btn-carrito">AGREGAR AL CARRITO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Papas -->
+<div id="modal-papas" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarProducto('papas')">&times;</span>
+      
+    <div class="detalle-producto">
+      <img src="Fotos editadas/2.Verduras/Tuberculos/Papas.png" alt="Papas">
+        
+      <div class="info">
+        <h2>PAPAS</h2>
+        <p><strong>$1.600 / libra</strong> &nbsp;&nbsp; <strong>$3.800 / kilogramo</strong></p>
+        <p><b>Descripción:</b> Papa seleccionada, ideal para asar, freír o guisar. Presentación: 1 libra o 1 kg </p>
+        
+        <!-- selector de unidad -->
+        <label>Presentación:</label>
+        <select>
+          <option value="libra">Libra</option>
+          <option value="kg">Kilogramo</option>
+        </select>
+        
+        <!-- selector de cantidad -->
+        <div class="cantidad">
+          <button onclick="cambiarCantidad('papas', -1)">-</button>
+          <span id="cantidad-papas">0</span>
+          <button onclick="cambiarCantidad('papas', 1)">+</button>
+        </div>
+        
+        <!-- botón agregar -->
+        <button class="btn-carrito">AGREGAR AL CARRITO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Pulpa de lulo -->
+<div id="modal-pulpadelulo" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarProducto('pulpadelulo')">&times;</span>
+      
+    <div class="detalle-producto">
+      <img src="Fotos editadas/3.Congelados/Pulpa de fruta/Lulo.png" alt="Pulpa de lulo">
+        
+      <div class="info">
+        <h2>PULPA DE LULO</h2>
+        <p><strong>$5.000 / libra</strong> &nbsp;&nbsp; <strong>$9.500 / kilogramo</strong></p>
+        <p><b>Descripción:</b> Pulpa de lulo natural, ácida y refrescante, perfecta para jugos típicos. Presentación: 1 libra o 1 kg. </p>
+        
+        <!-- selector de unidad -->
+        <label>Presentación:</label>
+        <select>
+          <option value="libra">Libra</option>
+          <option value="kg">Kilogramo</option>
+        </select>
+        
+        <!-- selector de cantidad -->
+        <div class="cantidad">
+          <button onclick="cambiarCantidad('pulpadelulo', -1)">-</button>
+          <span id="cantidad-pulpadelulo">0</span>
+          <button onclick="cambiarCantidad('pulpadelulo', 1)">+</button>
+        </div>
+        
+        <!-- botón agregar -->
+        <button class="btn-carrito">AGREGAR AL CARRITO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Acelga -->
+<div id="modal-acelga" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarProducto('acelga')">&times;</span>
+      
+    <div class="detalle-producto">
+      <img src="Fotos editadas/2.Verduras/Hortalizas/Acelga.png" alt="Acelga">
+        
+      <div class="info">
+        <h2>ACELGA</h2>
+        <p><strong>$1.600 / libra</strong> &nbsp;&nbsp; <strong>$3.000 / kilogramo</strong></p>
+        <p><b>Descripción:</b> Acelga fresca de hojas grandes, perfecta para sopas y guisos. Presentación: 1 libra o 1 kg.  </p>
+        
+        <!-- selector de unidad -->
+        <label>Presentación:</label>
+        <select>
+          <option value="libra">Libra</option>
+          <option value="kg">Kilogramo</option>
+        </select>
+        
+        <!-- selector de cantidad -->
+        <div class="cantidad">
+          <button onclick="cambiarCantidad('acelga', -1)">-</button>
+          <span id="cantidad-acelga">0</span>
+          <button onclick="cambiarCantidad('acelga', 1)">+</button>
+        </div>
+        
+        <!-- botón agregar -->
+        <button class="btn-carrito">AGREGAR AL CARRITO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Combo Salud-->
+<div id="modal-combosalud" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarProducto('combosalud')">&times;</span>
+      
+    <div class="detalle-producto">
+      <img src="Fotos editadas/4. Combos y promociones/Combos familiares/Combo Salud.png" alt="Combo Salud">
+        
+      <div class="info">
+        <h2>COMBO SALUD</h2>
+        <p><strong>$14.500 </strong> &nbsp;&nbsp; <strong>Combo de 3 frutas tropicales</strong></p>
+        <p><b>Descripción:</b> Contiene: Manzana, lechuga y tomate. Una opción equilibrada para ensaladas y refrigerios saludables. Incluye 1 libra de cada producto. </p>
+        
+        <!-- selector de cantidad -->
+        <div class="cantidad">
+          <button onclick="cambiarCantidad('combosalud', -1)">-</button>
+          <span id="cantidad-combosalud">0</span>
+          <button onclick="cambiarCantidad('combosalud', 1)">+</button>
+        </div>
+        
+        <!-- botón agregar -->
+        <button class="btn-carrito">AGREGAR AL CARRITO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Combo Frescura-->
+<div id="modal-combofrescura" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarProducto('combofrescura')">&times;</span>
+      
+    <div class="detalle-producto">
+      <img src="Fotos editadas/4. Combos y promociones/Combos familiares/ComboFrescura.png" alt="Combo Frescura">
+        
+      <div class="info">
+        <h2>COMBO FRESCURA</h2>
+        <p><strong>$11.500 </strong> &nbsp;&nbsp; <strong>Combo de 3 productos</strong></p>
+        <p><b>Descripción:</b> Contiene: Papas, espinaca y zanahoria. Perfecta combinación de hortalizas frescas para tus comidas diarias. Incluye 1 libra de cada producto. </p>
+        
+        <!-- selector de cantidad -->
+        <div class="cantidad">
+          <button onclick="cambiarCantidad('combofrescura', -1)">-</button>
+          <span id="cantidad-combofrescura">0</span>
+          <button onclick="cambiarCantidad('combofrescura', 1)">+</button>
+        </div>
+        
+        <!-- botón agregar -->
+        <button class="btn-carrito">AGREGAR AL CARRITO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Combo Energía-->
+<div id="modal-comboenergia" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarProducto('comboenergia')">&times;</span>
+      
+    <div class="detalle-producto">
+      <img src="Fotos editadas/4. Combos y promociones/Combos familiares/ComboEnergia.png" alt="Combo Energía">
+        
+      <div class="info">
+        <h2>COMBO ENERGÍA</h2>
+        <p><strong>$13.000 </strong> &nbsp;&nbsp; <strong>Combo de 3 productos frescos</strong></p>
+        <p><b>Descripción:</b> Contiene: Mango, banano y mandarina. Selección de frutas tropicales llenas de sabor y vitaminas. Incluye 1 libra de cada producto. </p>
+        
+        <!-- selector de cantidad -->
+        <div class="cantidad">
+          <button onclick="cambiarCantidad('comboenergia', -1)">-</button>
+          <span id="cantidad-comboenergia">0</span>
+          <button onclick="cambiarCantidad('comboenergia', 1)">+</button>
+        </div>
+        
+        <!-- botón agregar -->
+        <button class="btn-carrito">AGREGAR AL CARRITO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal Yuca-->
+  <div id="modal-yuca" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('yuca')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/2.Verduras/Tuberculos/Yuca.png" alt="Yuca">
+        
+        <div class="info">
+          <h2>YUCA</h2>
+          <p><strong>$1.800 / libra</strong> &nbsp;&nbsp; <strong>$3.400 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Yuca fresca, lista para cocinar frita, sancochada o en puré. Presentación: 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('yuca', -1)">-</button>
+            <span id="cantidad-yuca">0</span>
+            <button onclick="cambiarCantidad('yuca', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Espinaca -->
+  <div id="modal-espinaca" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('espinaca')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/2.Verduras/Hortalizas/Espinaca.png" alt="Espinaca">
+        
+        <div class="info">
+          <h2>ESPINACA</h2>
+          <p><strong>$1.500 / libra</strong> &nbsp;&nbsp; <strong>$2.800 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Espinaca fresca, lista para ensaladas, sopas y guisos. Presentación: bolsa de 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('espinaca', -1)">-</button>
+            <span id="cantidad-espinaca">0</span>
+            <button onclick="cambiarCantidad('espinaca', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Brocolí Mix -->
+  <div id="modal-brocolimix" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('brocolimix')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/3.Congelados/Vegetales/BrocoliMix.png" alt="BrocoliMix">
+        
+        <div class="info">
+          <h2>BROCOLÍ MIX</h2>
+          <p><strong>$5.000 / libra</strong> &nbsp;&nbsp; <strong>$9.500 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Brócoli seleccionado, cortado y congelado para conservar su frescura acompañado de piña picada y tomate. Presentación: 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('brocolimix', -1)">-</button>
+            <span id="cantidad-brocolimix">0</span>
+            <button onclick="cambiarCantidad('brocolimix', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Pulpa de Mango -->
+  <div id="modal-pulpademango" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('pulpademango')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/3.Congelados/Pulpa de fruta/Mango.png" alt="Pulpa de Mango">
+        
+        <div class="info">
+          <h2>PULPA DE MANGO</h2>
+          <p><strong>$4.500 / libra</strong> &nbsp;&nbsp; <strong>$8.500 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Pulpa de fruta natural, lista para jugos y postres. Presentación: bolsa de 1 libra o 1 kg (congelada).</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('pulpademango', -1)">-</button>
+            <span id="cantidad-pulpademango">0</span>
+            <button onclick="cambiarCantidad('pulpademango', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Piña -->
+  <div id="modal-piña" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('piña')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/1.Frutas/Tropicales/Piña.png" alt="Piña">
+        
+        <div class="info">
+          <h2>PIÑA</h2>
+          <p><strong>$1.200 / libra</strong> &nbsp;&nbsp; <strong>$2.200 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Piña dulce y jugosa, lista para consumo o jugos. Se entrega pelada y lista para ser refrigerada. Presentación: 1 libra o 1 kg</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('piña', -1)">-</button>
+            <span id="cantidad-piña">0</span>
+            <button onclick="cambiarCantidad('piña', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Uvas -->
+  <div id="modal-uvas" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('uvas')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/4. Combos y promociones/promociones de temporada/Uvas.png" alt="Uvas">
+        
+        <div class="info">
+          <h2>UVAS EN DICIEMBRE</h2>
+          <p><strong>$1.200 / libra</strong> &nbsp;&nbsp; <strong>$18.500 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Uvas frescas, dulces y listas para compartir en familia. Presentación: 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('uvas', -1)">-</button>
+            <span id="cantidad-uvas">0</span>
+            <button onclick="cambiarCantidad('uvas', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal Mandarinas -->
+  <div id="modal-mandarinas" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('mandarinas')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/1.Frutas/Citricas/Mandarinas.png" alt="Mandarinas">
+        
+        <div class="info">
+          <h2>MANDARINAS</h2>
+          <p><strong>$1.600 / libra</strong> &nbsp;&nbsp; <strong>$3.000 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Mandarina dulce y fácil de pelar, recomendada como snack saludable. Presentación: 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('mandarinas', -1)">-</button>
+            <span id="cantidad-mandarinas">0</span>
+            <button onclick="cambiarCantidad('mandarinas', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Mango -->
+  <div id="modal-mango" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('mango')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/1.Frutas/Tropicales/Mango.png" alt="Mango">
+        
+        <div class="info">
+          <h2>MANGO</h2>
+          <p><strong>$1.200 / libra</strong> &nbsp;&nbsp; <strong>$2.200 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Mango maduro y fresco, excelente para jugos, postres y ensaladas. Disponible en 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('mango', -1)">-</button>
+            <span id="cantidad-mango">0</span>
+            <button onclick="cambiarCantidad('mango', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Lechuga -->
+  <div id="modal-lechuga" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('lechuga')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/2.Verduras/Hortalizas/Lechuga.png" alt="Lechuga">
+        
+        <div class="info">
+          <h2>LECHUGA</h2>
+          <p><strong>$1.800 / libra</strong> &nbsp;&nbsp; <strong>$3.400 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Lechuga crujiente y fresca, ideal para ensaladas y wraps. Presentación: 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('lechuga', -1)">-</button>
+            <span id="cantidad-lechuga">0</span>
+            <button onclick="cambiarCantidad('lechuga', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Pulpa de Piña -->
+  <div id="modal-pulpadepiña" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('pulpadepiña')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/3.Congelados/Pulpa de fruta/Piña.png" alt="Pulpa de Piña">
+        
+        <div class="info">
+          <h2>PULPA DE PIÑA</h2>
+          <p><strong>$4.000 / libra</strong> &nbsp;&nbsp; <strong>$8.500 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Pulpa de piña natural, sin azúcar añadida. Presentación: 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('pulpadepiña', -1)">-</button>
+            <span id="cantidad-pulpadepiña">0</span>
+            <button onclick="cambiarCantidad('pulpadepiña', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Maíz Tierno -->
+  <div id="modal-maiztierno" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('maiztierno')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/3.Congelados/Vegetales/MaizTierno.png" alt="MaizTierno">
+        
+        <div class="info">
+          <h2>MAÍZ TIERNO</h2>
+          <p><strong>$4.200 / libra</strong> &nbsp;&nbsp; <strong>$8.000 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Maíz desgranado y congelado, ideal para sopas, arepas y guisos. Presentación: 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('maiztierno', -1)">-</button>
+            <span id="cantidad-maiztierno">0</span>
+            <button onclick="cambiarCantidad('maiztierno', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Verduras Mix -->
+  <div id="modal-verdurasmix" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('verdurasmix')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/3.Congelados/Vegetales/Verduras mix.png" alt="VerdurasMix">
+        
+        <div class="info">
+          <h2>VERDURAS MIX</h2>
+          <p><strong>$4.500 / libra</strong> &nbsp;&nbsp; <strong>$8.500 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Mezcla congelada de zanahoria, arveja y habichuela, lista para cocinar. Presentación: 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('verdurasmix', -1)">-</button>
+            <span id="cantidad-verdurasmix">0</span>
+            <button onclick="cambiarCantidad('verdurasmix', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Durazno de Otoño -->
+  <div id="modal-durazno" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('durazno')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/4. Combos y promociones/promociones de temporada/Durazno.png" alt="Durazno">
+        
+        <div class="info">
+          <h2>DURAZNO DE OTOÑO</h2>
+          <p><strong>$7.000 / libra</strong> &nbsp;&nbsp; <strong>$13.500 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Durazno fresco, jugoso y aromático. Perfecto para jugos, postres y consumo directo. Presentación: 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('durazno', -1)">-</button>
+            <span id="cantidad-durazno">0</span>
+            <button onclick="cambiarCantidad('durazno', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Sandia Veraniega -->
+  <div id="modal-sandias" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('sandias')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/4. Combos y promociones/promociones de temporada/Sandias.png" alt="Sandias">
+        
+        <div class="info">
+          <h2>SANDIAS VERANIEGAS</h2>
+          <p><strong>$4.200 / libra</strong> &nbsp;&nbsp; <strong>$8.000 / kilogramo</strong></p>
+          <p><b>Descripción:</b>Sandía jugosa y refrescante, ideal para días calurosos. Presentación: 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('sandias', -1)">-</button>
+            <span id="cantidad-sandias">0</span>
+            <button onclick="cambiarCantidad('sandias', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Papaya-->
+  <div id="modal-papaya" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('papaya')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/1.Frutas/Tropicales/Papaya.png" alt="Papaya">
+        
+        <div class="info">
+          <h2>PAPAYA</h2>
+          <p><strong>$1.000 / libra</strong> &nbsp;&nbsp; <strong>$1.900 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Papaya fresca, con pulpa suave y nutritiva. Rica en fibra y vitaminas. Presentación: 1 libra o 1 kg.</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('papaya', -1)">-</button>
+            <span id="cantidad-papaya">0</span>
+            <button onclick="cambiarCantidad('papaya', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Zanahoria -->
+  <div id="modal-zanahorias" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarProducto('zanahorias')">&times;</span>
+      
+      <div class="detalle-producto">
+        <img src="Fotos editadas/2.Verduras/Tuberculos/Zanahorias.png" alt="Zanahoria">
+        
+        <div class="info">
+          <h2>ZANAHORIAS</h2>
+          <p><strong>$1.200 / libra</strong> &nbsp;&nbsp; <strong>$2.200 / kilogramo</strong></p>
+          <p><b>Descripción:</b> Zanahoria fresca y crujiente, rica en betacarotenos. Ideal para jugos, sopas y ensaladas. Presentación: 1 libra o 1 kg</p>
+          
+          <!-- selector de unidad -->
+          <label>Presentación:</label>
+          <select>
+            <option value="libra">Libra</option>
+            <option value="kg">Kilogramo</option>
+          </select>
+          
+          <!-- selector de cantidad -->
+          <div class="cantidad">
+            <button onclick="cambiarCantidad('zanahorias', -1)">-</button>
+            <span id="cantidad-zanahorias">0</span>
+            <button onclick="cambiarCantidad('zanahorias', 1)">+</button>
+          </div>
+          
+          <!-- botón agregar -->
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Vincular el JS -->
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
