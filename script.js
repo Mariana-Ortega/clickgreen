@@ -129,23 +129,27 @@ document.getElementById("form-pedido").addEventListener("submit", e => {
   let direccion = document.getElementById("direccion").value;
   let observaciones = document.getElementById("observaciones").value;
 
-  // Obtener detalle del carrito
+  // 📌 Detalle del carrito
   let detalle = carrito.map(item => 
     `${item.nombre} - ${item.cantidad} ${item.unidad}(s) - $${item.total.toLocaleString()}`
   ).join("\n");
 
-  // Mensaje completo
-  let mensaje = `🛒 NUEVO PEDIDO\n\n👤 Nombre: ${nombre}\n📞 Teléfono: ${telefono}\n📍 Dirección: ${direccion}\n📝 Observaciones: ${observaciones}\n\n📦 Detalles:\n${detalle}`;
+  // 📌 Número fijo de la tienda 
+  let numeroTienda = "573185241371";
 
-// Simulación: abrir en WhatsApp
-let numero = "573185241371"; // ← pon aquí tu número en formato internacional
-let url = `https://wa.me/${3185241371}?text=${Prueba}`;
-window.open(url, "_blank");
+  // 📌 Mensaje completo
+  let mensaje = `🛒 Nuevo pedido:
+👤 Nombre: ${nombre}
+📞 Teléfono: ${telefono}
+🏠 Dirección: ${direccion}
+📝 Observaciones: ${observaciones}
 
+📦 Detalle del pedido:
+${detalle}`;
 
-  // Vaciar carrito después de enviar
-  carrito = [];
-  document.getElementById("modal-pedido").style.display = "none";
-  actualizarCarrito(); // refrescar vista del carrito
+  // Abrir WhatsApp con el mensaje ya armado
+  let url = `https://wa.me/${573185241371}?text=${encodeURIComponent(prueba)}`;
+  console.log("🔗 Enlace generado:", url);
+  window.open(url, "_blank");
 });
 
