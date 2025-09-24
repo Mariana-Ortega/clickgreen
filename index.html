@@ -1026,7 +1026,7 @@
     
     <!-- botón abajo -->
     <div class="acciones">
-      <button class="finalizar-compra">Finalizar compra</button>
+      <button class="finalizar-compra" onclick="finalizarCompra()">Finalizar compra</button>
     </div>
   </div>
 </div>
@@ -1055,10 +1055,39 @@
   </div>
 </div>
 
+<!-- Modal Paso a Paso -->
+<div id="modal-tutorial" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarTutorial()">&times;</span>
+    
+    <h2>🛒 ¿Cómo realizar tu pedido?</h2>
+    <ol>
+      <li>Explora los productos en la página principal o usa el menú de categorías.</li>
+      <li>Haz clic en <b>"Ver detalle"</b> para abrir la ventana del producto.</li>
+      <li>Selecciona <b>presentación</b> (libra, kilogramo o combo) y cantidad.</li>
+      <li>Presiona <b>"Agregar al carrito"</b>.</li>
+      <li>Cuando termines, abre el <b>carrito</b> (ícono arriba a la derecha).</li>
+      <li>Revisa tu pedido y haz clic en <b>"Finalizar compra"</b>.</li>
+      <li>Completa el formulario con tus datos y confirma.</li>
+      <li>Tu pedido será enviado automáticamente a <b>WhatsApp</b>.</li>
+    </ol>
+
+    <button onclick="cerrarTutorial()" class="btn-carrito">¡Entendido!</button>
+  </div>
+</div>
+
+
   <!-- Vincular el JS -->
   <script src="script.js"></script>
 </body>
 </html>
+
+<!-- Pie de página -->
+<footer class="footer">
+  <p>&copy; 2025 ClickGreen. Todos los derechos reservados.</p>
+  <p>Desarrollado por <b>Deyna Mariana Ortega Higuera</b> – Grupo 213026_4 – Universidad UNAD</p>
+  <p>📧 <a href="mailto:dmortegah@unadvirtual.edu.co">dmortegah@unadvirtual.edu.co</a></p>
+</footer>
 
 
 

@@ -46,7 +46,7 @@ function cambiarCantidad(id, valor) {
   cantidadElem.innerText = cantidad;
 }
 
-// 🛒 Agregar al carrito
+/// 🛒 Agregar al carrito
 function agregarAlCarrito(id) {
   const modal = document.getElementById("modal-" + id);
   const cantidad = parseInt(document.getElementById("cantidad-" + id).innerText);
@@ -71,12 +71,14 @@ function agregarAlCarrito(id) {
       }
     }
 
-    carrito.push({ nombre, cantidad, presentacion, precio, tipo });
+    // ⚡ Agregar el total aquí
+    const total = precio * cantidad;
+
+    carrito.push({ nombre, cantidad, presentacion, precio, tipo, total });
     mostrarCarrito();
     cerrarProducto(id);
   }
 }
-
 
 
 // 🛒 Mostrar carrito
@@ -110,10 +112,14 @@ function mostrarCarrito() {
   modalCarrito.style.display = "flex";
 }
 
-// Abrir formulario al hacer clic en "Finalizar compra"
-document.querySelector(".finalizar-compra").addEventListener("click", () => {
+// Abrir formulario al finalizar compra
+function finalizarCompra() {
+  // ✅ Cerrar modal carrito
+  document.getElementById("modal-carrito").style.display = "none";
+
+  // ✅ Abrir formulario de pedido
   document.getElementById("modal-pedido").style.display = "flex";
-});
+}
 
 // Cerrar formulario
 function cerrarPedido() {
@@ -129,15 +135,13 @@ document.getElementById("form-pedido").addEventListener("submit", e => {
   let direccion = document.getElementById("direccion").value;
   let observaciones = document.getElementById("observaciones").value;
 
-  // 📌 Detalle del carrito
+  // 📦 Detalle del carrito
   let detalle = carrito.map(item => 
-    `${item.nombre} - ${item.cantidad} ${item.unidad}(s) - $${item.total.toLocaleString()}`
+    `${item.nombre} - ${item.cantidad} ${item.presentacion}(s) - $${(item.cantidad * item.precio).toLocaleString()}`
   ).join("\n");
 
-  // 📌 Número fijo de la tienda 
-  let numeroTienda = "573185241371";
+  let numeroTienda = "573185241371"; // tu número
 
-  // 📌 Mensaje completo
   let mensaje = `🛒 Nuevo pedido:
 👤 Nombre: ${nombre}
 📞 Teléfono: ${telefono}
@@ -145,11 +149,37 @@ document.getElementById("form-pedido").addEventListener("submit", e => {
 📝 Observaciones: ${observaciones}
 
 📦 Detalle del pedido:
-${detalle}`;
+${detalle}
 
-  // Abrir WhatsApp con el mensaje ya armado
-  let url = `https://wa.me/${573185241371}?text=${encodeURIComponent(prueba)}`;
-  console.log("🔗 Enlace generado:", url);
+💰 Total: $${carrito.reduce((suma, item) => suma + (item.cantidad * item.precio), 0).toLocaleString()}`;
+
+  // Abrir WhatsApp
+  let url = `https://wa.me/${numeroTienda}?text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
+
+  // ✅ Limpiar carrito y cantidades en productos
+  carrito = [];
+  document.querySelectorAll("[id^='cantidad-']").forEach(elem => elem.innerText = "0");
+  mostrarCarrito();
+
+  // ✅ Cerrar todo: formulario y carrito
+  document.getElementById("modal-pedido").style.display = "none";
+  document.getElementById("modal-carrito").style.display = "none";
 });
+
+
+
+// Abrir tutorial desde el banner
+document.querySelector(".banner a").addEventListener("click", e => {
+  e.preventDefault(); // evitar redirección
+  document.getElementById("modal-tutorial").style.display = "flex";
+});
+
+// Cerrar tutorial
+function cerrarTutorial() {
+  document.getElementById("modal-tutorial").style.display = "none";
+}
+
+
+
 
