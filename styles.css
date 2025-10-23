@@ -1,24 +1,10 @@
-/* Tipografía general */
+/* Estilos generales */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #333;
 }
-
-/* Aplica Londrina solo al logo, menú y encabezados */
-header h1,
-nav a,
-.menu-categorias a {
-  font-family: 'Londrina Solid', sans-serif;
-}
-
-/* Productos vuelven a Arial */
-.producto h3,
-.producto p,
-.producto button {
-  font-family: Arial, sans-serif;
-}
-
 
 /* Encabezado */
 header {
@@ -28,6 +14,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
+
+  /* Mantenerlo fijo arriba */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
@@ -40,24 +34,151 @@ header .logo img {
   margin-right: 10px;
 }
 
-header nav a {
+header h1 {
+  font-family: "Londrina Solid", cursive;
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* Encabezado */
+header {
+  background-color: #3b8d2d;
   color: white;
-  margin-left: 20px;
-  text-decoration: none;
-  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+
+  /* Fijo arriba */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Ajuste del nav (zona del carrito) */
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 60px; /* <-- mueve el carrito un poco hacia dentro */
+}
+
+/* Ícono del carrito */
 header nav .carrito img {
-  height: 52px;   /* tamaño fijo para el carrito */
+  height: 45px;
   width: auto;
-  vertical-align: middle;
-  margin-left: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* Banner */
+/* Efecto al pasar el mouse */
+header nav .carrito img:hover {
+  transform: scale(1.1);
+}
+
+/* --- Buscador --- */
+.buscador {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  padding: 5px 10px;
+  width: 300px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.buscador input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 25px;
+  font-size: 14px;
+}
+
+.buscador button {
+  background-color: #3b8d2d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buscador button:hover {
+  background-color: #2e6e23;
+}
+
+/* Modo celular*/
+
+/* === Diseño base (escritorio) === */
+.menu-toggle {
+  display: none;
+}
+
+/* === Diseño móvil (pantallas pequeñas) === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .buscador {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav {
+    display: none; /* oculto por defecto */
+    flex-direction: column;
+    width: 100%;
+    background-color: #3b8d2d;
+  }
+
+  nav a {
+    padding: 10px;
+    border-top: 1px solid #4fa73f;
+    text-align: center;
+  }
+
+  /* Botón de menú visible solo en móvil */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Cuando el menú está activo */
+  nav.activo {
+    display: flex;
+  }
+}
+
+
+/* Banner principal */
+.banner {
+  margin-top: 90px; /* Espacio para no tapar el header */
+}
+
 .banner img {
   width: 100%;
   display: block;
+  border-radius: 0;
 }
 
 /* ------------------ MENÚ Y SUBMENÚS ------------------ */
@@ -76,7 +197,7 @@ header nav .carrito img {
 /* contenedor principal */
 .menu-categorias {
   display: block;
-  background-color: #5fb130;
+  background-color: #3b8d2d;
 }
 
 /* Menú activo */
