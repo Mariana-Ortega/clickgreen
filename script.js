@@ -13,6 +13,43 @@ function cambiarCantidad(id, valor) {
   cantidadElem.innerText = cantidad;
 }
 
+// 🔍 Buscador de productos (funciona con tu sección actual)
+document.querySelector('.buscador button').addEventListener('click', function() {
+  const texto = document.querySelector('.buscador input').value.toLowerCase().trim();
+  const productos = document.querySelectorAll('.producto');
+
+  let resultados = 0;
+
+  productos.forEach(prod => {
+    const nombreProducto = prod.querySelector('p').innerText.toLowerCase();
+    if (texto === "" || nombreProducto.includes(texto)) {
+      prod.style.display = "block";
+      resultados++;
+    } else {
+      prod.style.display = "none";
+    }
+  });
+
+  if (resultados === 0) {
+    alert("No se encontraron productos con ese nombre 🥲");
+  }
+});
+
+// También permite buscar presionando Enter
+document.querySelector('.buscador input').addEventListener('keyup', function(e) {
+  if (e.key === "Enter") {
+    document.querySelector('.buscador button').click();
+  }
+
+  document.getElementById("buscador-input").addEventListener("keyup", buscarProducto);
+});
+
+
+// BANNERS
+
+
+
+
 // FILTRO DE PRODUCTOS
 document.querySelectorAll(".filtro").forEach(boton => {
   boton.addEventListener("click", e => {

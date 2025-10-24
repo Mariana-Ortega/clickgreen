@@ -14,7 +14,6 @@
   <header>
   <div class="logo">
     <img src="Imagenes/logo.png" alt="Logo Click Green">
-    <h1>Click Green</h1>
   </div>
 
   <!-- Botón de menú para móviles -->
@@ -22,10 +21,12 @@
 
 
   <!-- 🔍 Nueva sección de buscador -->
+<!-- 🔍 Sección de buscador -->
   <div class="buscador">
-    <input type="text" placeholder="Buscar productos..." />
-    <button type="submit">Buscar</button>
+    <input id="buscador-input" type="text" placeholder="Buscar productos..." />
+    <button type="button" onclick="buscarProducto()">Buscar</button>
   </div>
+
 
   <!-- Carrito -->
   <nav>
@@ -36,12 +37,29 @@
 
 </header>
 
-  <!-- Banner principal -->
-  <section class="banner">
+
+<!-- Banners -->
+<section class="banner">
+  <div class="banner-slide activo">
+    <!-- Primer banner: mantiene el enlace normal -->
     <a href="productos.html">
-      <img src="Imagenes/Banner.png" alt="Vegetales Frescos">
+      <img src="Imagenes/banner.png" alt="Vegetales Frescos">
     </a>
-  </section>
+  </div>
+
+  <div class="banner-slide">
+    <!-- Segundo banner: abre la ventana emergente -->
+    <a href="#" onclick="abrirTutorial()">
+      <img src="Imagenes/banner2.png" alt="Frutas Tropicales">
+    </a>
+  </div>
+
+  <span class="prev" onclick="cambiarBanner(-1)">&#10094;</span>
+  <span class="next" onclick="cambiarBanner(1)">&#10095;</span>
+</section>
+
+
+
 
   <!-- Menú de categorías -->
   <nav class="menu-categorias">
@@ -297,7 +315,6 @@
   </div>
 </div>
 
-
 <!-- Modal de Papas -->
 <div id="modal-papas" class="modal" data-nombre="PAPAS">
   <div class="modal-contenido">
@@ -427,7 +444,6 @@
   </div>
 </div>
 
-
 <!-- Modal de Combo Frescura-->
 <div id="modal-combofrescura" class="modal" data-nombre="COMBO FRESCURA" data-tipo="combo">
   <div class="modal-contenido">
@@ -478,7 +494,7 @@
   </div>
 </div>
 
-  <!-- Modal Yuca-->
+<!-- Modal Yuca-->
   <div id="modal-yuca" class="modal" data-nombre="YUCA">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('yuca')">&times;</span>
@@ -512,7 +528,7 @@
     </div>
   </div>
 
-  <!-- Modal Espinaca -->
+<!-- Modal Espinaca -->
   <div id="modal-espinaca" class="modal" data-nombre="ESPINACA">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('espinaca')">&times;</span>
@@ -546,7 +562,7 @@
     </div>
   </div>
 
-  <!-- Modal Brocolí Mix -->
+<!-- Modal Brocolí Mix -->
   <div id="modal-brocolimix" class="modal" data-nombre="BROCOLÍ MIX">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('brocolimix')">&times;</span>
@@ -580,7 +596,7 @@
     </div>
   </div>
 
-  <!-- Modal Pulpa de Mango -->
+<!-- Modal Pulpa de Mango -->
   <div id="modal-pulpademango" class="modal" data-nombre="PULPA DE MANGO">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('pulpademango')">&times;</span>
@@ -614,7 +630,7 @@
     </div>
   </div>
 
-  <!-- Modal Piña -->
+<!-- Modal Piña -->
   <div id="modal-piña" class="modal" data-nombre="PIÑA">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('piña')">&times;</span>
@@ -648,7 +664,7 @@
     </div>
   </div>
 
-  <!-- Modal Uvas -->
+<!-- Modal Uvas -->
   <div id="modal-uvas" class="modal" data-nombre="UVAS EN DICIEMBRE">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('uvas')">&times;</span>
@@ -683,7 +699,7 @@
   </div>
 
 
-  <!-- Modal Mandarinas -->
+<!-- Modal Mandarinas -->
   <div id="modal-mandarinas" class="modal" data-nombre="MANDARINAS">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('mandarinas')">&times;</span>
@@ -717,7 +733,7 @@
     </div>
   </div>
 
-  <!-- Modal Mango -->
+<!-- Modal Mango -->
   <div id="modal-mango" class="modal" data-nombre="MANGO">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('mango')">&times;</span>
@@ -751,7 +767,7 @@
     </div>
   </div>
 
-  <!-- Modal Lechuga -->
+<!-- Modal Lechuga -->
   <div id="modal-lechuga" class="modal" data-nombre="LECHUGA">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('lechuga')">&times;</span>
@@ -819,7 +835,7 @@
     </div>
   </div>
 
-  <!-- Modal Maíz Tierno -->
+<!-- Modal Maíz Tierno -->
   <div id="modal-maiztierno" class="modal" data-nombre="MAÍZ TIERNO">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('maiztierno')">&times;</span>
@@ -853,7 +869,7 @@
     </div>
   </div>
 
-  <!-- Modal Verduras Mix -->
+<!-- Modal Verduras Mix -->
   <div id="modal-verdurasmix" class="modal" data-nombre="VERDURAS MIX">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('verdurasmix')">&times;</span>
@@ -887,7 +903,7 @@
     </div>
   </div>
 
-  <!-- Modal Durazno de Otoño -->
+<!-- Modal Durazno de Otoño -->
   <div id="modal-durazno" class="modal" data-nombre="DURAZNO DE OTOÑO">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('durazno')">&times;</span>
@@ -921,7 +937,7 @@
     </div>
   </div>
 
-  <!-- Modal Sandia Veraniega -->
+<!-- Modal Sandia Veraniega -->
   <div id="modal-sandias" class="modal" data-nombre="SANDIAS VERANIEGAS">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('sandias')">&times;</span>
@@ -1087,11 +1103,76 @@
   </div>
 </div>
 
+<!-- Scripts -->
 <script>
   function toggleMenu() {
     const nav = document.querySelector('header nav');
     nav.classList.toggle('activo');
   }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  let indiceBanner = 0;
+  const banners = document.querySelectorAll(".banner-slide");
+  const totalBanners = banners.length;
+  let intervaloBanner;
+
+  // Función para mostrar el banner actual con transición suave
+  function mostrarBanner(index) {
+    banners.forEach((banner, i) => {
+      banner.style.opacity = i === index ? "1" : "0";
+      banner.style.transition = "opacity 0.8s ease-in-out";
+      banner.classList.toggle("activo", i === index);
+    });
+  }
+
+  // Cambiar al siguiente o anterior banner
+  function cambiarBanner(n) {
+    indiceBanner = (indiceBanner + n + totalBanners) % totalBanners;
+    mostrarBanner(indiceBanner);
+  }
+
+  // Botones de control manual
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+
+  if (prev) prev.addEventListener("click", () => cambiarBanner(-1));
+  if (next) next.addEventListener("click", () => cambiarBanner(1));
+
+  // Rotación automática (cada 8 segundos)
+  intervaloBanner = setInterval(() => cambiarBanner(1), 8000);
+  mostrarBanner(indiceBanner);
+
+  // Funciones del modal
+  window.abrirTutorial = function () {
+    clearInterval(intervaloBanner); // pausa el cambio de banners
+    document.getElementById("modal-tutorial").style.display = "block";
+  };
+
+  window.cerrarTutorial = function () {
+    document.getElementById("modal-tutorial").style.display = "none";
+    intervaloBanner = setInterval(() => cambiarBanner(1), 8000); // reanuda
+  };
+
+  // Cierra el modal al hacer clic fuera del contenido
+  window.onclick = function (event) {
+    const modal = document.getElementById("modal-tutorial");
+    if (event.target === modal) {
+      modal.style.display = "none";
+      intervaloBanner = setInterval(() => cambiarBanner(1), 8000);
+    }
+  };
+
+  // 🔹 Abre el modal si se hace clic en el segundo banner
+  const segundoBanner = banners[1];
+  if (segundoBanner) {
+    segundoBanner.addEventListener("click", (e) => {
+      e.preventDefault(); // evita ir a productos.html
+      abrirTutorial();
+    });
+  }
+});
 </script>
 
   <!-- Vincular el JS -->
@@ -1100,9 +1181,11 @@
 </html>
 
 
-
 <!-- Pie de página -->
 <footer class="footer">
+  <div class="logo">
+    <img src="Imagenes/logo.png" alt="Logo Click Green">
+  </div>
   <p>&copy; 2025 ClickGreen. Todos los derechos reservados.</p>
 </footer>
 
