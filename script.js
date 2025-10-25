@@ -44,12 +44,6 @@ document.querySelector('.buscador input').addEventListener('keyup', function(e) 
   document.getElementById("buscador-input").addEventListener("keyup", buscarProducto);
 });
 
-
-// BANNERS
-
-
-
-
 // FILTRO DE PRODUCTOS
 document.querySelectorAll(".filtro").forEach(boton => {
   boton.addEventListener("click", e => {
@@ -66,16 +60,109 @@ document.querySelectorAll(".filtro").forEach(boton => {
   });
 });
 
+
+// 🖼️ Carruseles por producto
+const imagenesProductos = {
+  limones: [
+    "Fotos editadas/1.Frutas/Citricas/Limones.png",
+    "Fotos editadas/1.Frutas/Citricas/Limones2.png",
+    "Fotos editadas/1.Frutas/Citricas/Limones3.png"
+  ],
+  naranjas: [
+    "Fotos editadas/1.Frutas/Citricas/Narajas.png",
+    "Fotos editadas/1.Frutas/Citricas/Narajas2.png",
+    "Fotos editadas/1.Frutas/Citricas/Naraja3.png"
+  ],
+  mandarinas: [
+    "Fotos editadas/1.Frutas/Citricas/Mandarinas.png",
+    "Fotos editadas/1.Frutas/Citricas/Mandarinas2.png",
+    "Fotos editadas/1.Frutas/Citricas/Mandarinas3.png"
+  ],
+  papaya: [
+    "Fotos editadas/1.Frutas/Tropicales/Papaya.png",
+    "Fotos editadas/1.Frutas/Tropicales/Papaya2.png",
+    "Fotos editadas/1.Frutas/Tropicales/Papaya3.png"
+  ],
+  piña: [
+    "Fotos editadas/1.Frutas/Tropicales/Piña.png",
+    "Fotos editadas/1.Frutas/Tropicales/Piña2.png",
+    "Fotos editadas/1.Frutas/Tropicales/Piña3.png"
+  ],
+  mango: [
+    "Fotos editadas/1.Frutas/Tropicales/Mango.png",
+    "Fotos editadas/1.Frutas/Tropicales/Mango2.png",
+    "Fotos editadas/1.Frutas/Tropicales/Mango3.png"
+  ],
+  acelga: [
+    "Fotos editadas/2.Verduras/Hortalizas/Acelga.png",
+    "Fotos editadas/2.Verduras/Hortalizas/Acelga2.png",
+    "Fotos editadas/2.Verduras/Hortalizas/Acelga3.png"
+  ],
+  espinaca: [
+    "Fotos editadas/2.Verduras/Hortalizas/Espinaca.png",
+    "Fotos editadas/2.Verduras/Hortalizas/Espinaca2.png",
+    "Fotos editadas/2.Verduras/Hortalizas/Espinaca3.png"
+  ],
+  lechuga: [
+    "Fotos editadas/2.Verduras/Hortalizas/Lechuga.png",
+    "Fotos editadas/2.Verduras/Hortalizas/Lechuga2.png",
+    "Fotos editadas/2.Verduras/Hortalizas/Lechuga3.png"
+  ],
+  papas: [
+    "Fotos editadas/2.Verduras/Tuberculos/Papas.png",
+    "Fotos editadas/2.Verduras/Tuberculos/Papas2.png",
+    "Fotos editadas/2.Verduras/Tuberculos/Papas3.png"
+  ],
+  zanahorias: [
+    "Fotos editadas/2.Verduras/Tuberculos/Zanahorias.png",
+    "Fotos editadas/2.Verduras/Tuberculos/Zanahoria2.png",
+    "Fotos editadas/2.Verduras/Tuberculos/Zanahoria3.png"
+  ],
+  yuca: [
+    "Fotos editadas/2.Verduras/Tuberculos/Yuca.png",
+    "Fotos editadas/2.Verduras/Tuberculos/Yuca2.png",
+    "Fotos editadas/2.Verduras/Tuberculos/Yuca3.png"
+  ],
+  // puedes seguir agregando más productos aquí
+};
+
+let indiceActual = {};
+
+// Cambiar imagen del carrusel
+function cambiarImagen(id, direccion) {
+  if (!imagenesProductos[id]) return;
+  
+  // inicializar índice
+  if (indiceActual[id] === undefined) indiceActual[id] = 0;
+  
+  indiceActual[id] += direccion;
+
+  // volver al inicio si pasa el límite
+  if (indiceActual[id] < 0) indiceActual[id] = imagenesProductos[id].length - 1;
+  if (indiceActual[id] >= imagenesProductos[id].length) indiceActual[id] = 0;
+
+  document.getElementById("imagen-" + id).src = imagenesProductos[id][indiceActual[id]];
+}
+
+
+
 /* Carrito */
+/* -------------------------------
+   🛒 Lógica de productos y carrito
+---------------------------------- */
+
 let carrito = [];
 
-// Abrir y cerrar modales de productos
+/* 🟢 Abrir y cerrar modales de productos */
 function abrirProducto(id) {
   document.getElementById("modal-" + id).style.display = "flex";
 }
+
 function cerrarProducto(id) {
   document.getElementById("modal-" + id).style.display = "none";
 }
+
+/* 🔢 Cambiar cantidad en los modales */
 function cambiarCantidad(id, valor) {
   let cantidadElem = document.getElementById("cantidad-" + id);
   let cantidad = parseInt(cantidadElem.innerText) + valor;
@@ -83,23 +170,21 @@ function cambiarCantidad(id, valor) {
   cantidadElem.innerText = cantidad;
 }
 
-/// 🛒 Agregar al carrito
+/* 🛍️ Agregar productos al carrito */
 function agregarAlCarrito(id) {
   const modal = document.getElementById("modal-" + id);
   const cantidad = parseInt(document.getElementById("cantidad-" + id).innerText);
 
   if (cantidad > 0) {
     const nombre = modal.dataset.nombre;
-    const tipo = modal.dataset.tipo || "producto"; // "combo" o "producto"
+    const tipo = modal.dataset.tipo || "producto";
     let presentacion = "";
     let precio = 0;
 
     if (tipo === "combo") {
-      // Combos solo se venden por unidades
       presentacion = "combo";
       precio = parseInt(modal.querySelector("[data-precio-combo]").dataset.precioCombo);
     } else {
-      // Productos normales (libra o kg)
       presentacion = modal.querySelector("select").value;
       if (presentacion === "libra") {
         precio = parseInt(modal.querySelector("[data-precio-libra]").dataset.precioLibra);
@@ -108,102 +193,127 @@ function agregarAlCarrito(id) {
       }
     }
 
-    // ⚡ Agregar el total aquí
     const total = precio * cantidad;
-
     carrito.push({ nombre, cantidad, presentacion, precio, tipo, total });
+
     mostrarCarrito();
     cerrarProducto(id);
   }
 }
 
-
-// 🛒 Mostrar carrito
-function abrirCarrito() {
-  document.getElementById("modal-carrito").style.display = "flex";
-  actualizarCarrito();
-}
-function cerrarCarrito() {
-  document.getElementById("modal-carrito").style.display = "none";
-}
-function actualizarCarrito() {
-  const lista = document.getElementById("lista-carrito");
-  lista.innerHTML = ""; }
-
+/* 🛒 Mostrar contenido del carrito */
 function mostrarCarrito() {
-  const modalCarrito = document.getElementById("modal-carrito");
   const listaCarrito = document.getElementById("lista-carrito");
+  const btnFinalizar = document.getElementById("btn-finalizar-compra");
 
   listaCarrito.innerHTML = "";
   let total = 0;
 
-  carrito.forEach(prod => {
-    const subtotal = prod.precio * prod.cantidad;
-    total += subtotal;
-    listaCarrito.innerHTML += `
-      <p>${prod.nombre} - ${prod.cantidad} ${prod.presentacion}(s) - $${subtotal.toLocaleString()}</p>
-    `;
-  });
+  if (carrito.length === 0) {
+    listaCarrito.innerHTML = `<p style="text-align:center; color:#555;">Tu carrito está vacío 🛒</p>`;
+    if (btnFinalizar) {
+      btnFinalizar.disabled = true;
+      btnFinalizar.style.opacity = "0.5";
+      btnFinalizar.style.cursor = "not-allowed";
+    }
+  } else {
+    carrito.forEach((prod, index) => {
+      const subtotal = prod.precio * prod.cantidad;
+      total += subtotal;
 
-  listaCarrito.innerHTML += `<p><b>Total: $${total.toLocaleString()}</b></p>`;
-  modalCarrito.style.display = "flex";
+      listaCarrito.innerHTML += `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin:5px 0; padding:5px; background:#fff; border-radius:6px;">
+          <span>${prod.nombre} - ${prod.cantidad} ${prod.presentacion}(s)</span>
+          <span>$${subtotal.toLocaleString()}</span>
+          <button onclick="eliminarDelCarrito(${index})" style="background:red; color:white; border:none; border-radius:4px; padding:3px 6px; cursor:pointer;">✖</button>
+        </div>
+      `;
+    });
+
+    listaCarrito.innerHTML += `<p><b>Total: $${total.toLocaleString()}</b></p>`;
+
+    if (btnFinalizar) {
+      btnFinalizar.disabled = false;
+      btnFinalizar.style.opacity = "1";
+      btnFinalizar.style.cursor = "pointer";
+    }
+  }
 }
 
-// Abrir formulario al finalizar compra
-function finalizarCompra() {
-  // ✅ Cerrar modal carrito
+/* 🗑️ Eliminar un producto del carrito */
+function eliminarDelCarrito(index) {
+  carrito.splice(index, 1);
+  mostrarCarrito();
+}
+
+/* 🔍 Abrir y cerrar el carrito */
+function abrirCarrito() {
+  document.getElementById("modal-carrito").style.display = "flex";
+  mostrarCarrito();
+}
+
+function cerrarCarrito() {
   document.getElementById("modal-carrito").style.display = "none";
-
-  // ✅ Abrir formulario de pedido
-  document.getElementById("modal-pedido").style.display = "flex";
 }
 
-// Cerrar formulario
+/* 📦 Finalizar compra */
+function finalizarCompra() {
+  if (carrito.length === 0) {
+    alert("⚠️ Tu carrito está vacío. Agrega productos antes de finalizar la compra.");
+    return;
+  }
+
+  // Mostrar modal de pedido
+  document.getElementById("modal-pedido").style.display = "flex";
+  document.getElementById("modal-carrito").style.display = "none";
+}
+
+/* ❌ Cerrar el modal de pedido */
 function cerrarPedido() {
   document.getElementById("modal-pedido").style.display = "none";
 }
 
-// Enviar pedido a WhatsApp
-document.getElementById("form-pedido").addEventListener("submit", e => {
+/* ✅ Enviar pedido a WhatsApp */
+document.getElementById("form-pedido")?.addEventListener("submit", e => {
   e.preventDefault();
 
-  let nombre = document.getElementById("nombre").value;
-  let telefono = document.getElementById("telefono").value;
-  let direccion = document.getElementById("direccion").value;
-  let observaciones = document.getElementById("observaciones").value;
+  const nombre = document.getElementById("nombre").value;
+  const telefono = document.getElementById("telefono").value;
+  const direccion = document.getElementById("direccion").value;
+  const observaciones = document.getElementById("observaciones").value;
 
   // 📦 Detalle del carrito
-  let detalle = carrito.map(item => 
+  const detalle = carrito.map(item => 
     `${item.nombre} - ${item.cantidad} ${item.presentacion}(s) - $${(item.cantidad * item.precio).toLocaleString()}`
   ).join("\n");
 
-  let numeroTienda = "573185241371"; // tu número
+  const numeroTienda = "573185241371"; // ← tu número de WhatsApp
+  const totalCompra = carrito.reduce((suma, item) => suma + (item.cantidad * item.precio), 0);
 
-  let mensaje = `🛒 Nuevo pedido:
-👤 Nombre: ${nombre}
-📞 Teléfono: ${telefono}
-🏠 Dirección: ${direccion}
-📝 Observaciones: ${observaciones}
+  const mensaje = `🛒 *Nuevo pedido desde Click Green* 🌱
+👤 *Nombre:* ${nombre}
+📞 *Teléfono:* ${telefono}
+🏠 *Dirección:* ${direccion}
+📝 *Observaciones:* ${observaciones || "Ninguna"}
 
-📦 Detalle del pedido:
+📦 *Detalle del pedido:*
 ${detalle}
 
-💰 Total: $${carrito.reduce((suma, item) => suma + (item.cantidad * item.precio), 0).toLocaleString()}`;
+💰 *Total:* $${totalCompra.toLocaleString()}`;
 
-  // Abrir WhatsApp
-  let url = `https://wa.me/${numeroTienda}?text=${encodeURIComponent(mensaje)}`;
+  // Enviar a WhatsApp
+  const url = `https://wa.me/${numeroTienda}?text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
 
-  // ✅ Limpiar carrito y cantidades en productos
+  // Limpiar carrito
   carrito = [];
   document.querySelectorAll("[id^='cantidad-']").forEach(elem => elem.innerText = "0");
   mostrarCarrito();
 
-  // ✅ Cerrar todo: formulario y carrito
+  // Cerrar modales
   document.getElementById("modal-pedido").style.display = "none";
   document.getElementById("modal-carrito").style.display = "none";
 });
-
 
 
 // Abrir tutorial desde el banner

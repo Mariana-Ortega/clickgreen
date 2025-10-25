@@ -59,8 +59,6 @@
 </section>
 
 
-
-
   <!-- Menú de categorías -->
   <nav class="menu-categorias">
     <ul>
@@ -248,21 +246,27 @@
     </div>
   </section>
 
-  <!-- Modal Limones -->
+<!-- Modal Limones -->
   <div id="modal-limones" class="modal" data-nombre="LIMONES">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('limones')">&times;</span>
       <div class="detalle-producto">
-        <img src="Fotos editadas/1.Frutas/Citricas/Limones.png" alt="Limones">
+        
+        <!-- 📸 Carrusel de imágenes -->
+        <div class="carrusel">
+          <button class="prev" onclick="cambiarImagen('limones', -1)">&#10094;</button>
+          <img id="imagen-limones" src="Fotos editadas/1.Frutas/Citricas/Limones.png" alt="Limones">
+          <button class="next" onclick="cambiarImagen('limones', 1)">&#10095;</button>
+        </div>
 
         <div class="info">
-        <h2>LIMONES</h2>
-       <p>
-        <strong data-precio-libra="1800">$1.800</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
-        <strong data-precio-kg="3500">$3.500</strong> <strong>/ kilogramo</strong>
-      </p>
-        <p><b>Descripción:</b> Limón fresco, ideal para jugos, aderezos y cócteles. Disponible en presentaciones de 1 libra o 1 kg. Producto seleccionado de cultivos locales para garantizar frescura. </p>
-        
+          <h2>LIMONES</h2>
+          <p>
+            <strong data-precio-libra="1800">$1.800</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
+            <strong data-precio-kg="3500">$3.500</strong> <strong>/ kilogramo</strong>
+          </p>
+          <p><b>Descripción:</b> Limón fresco, ideal para jugos, aderezos y cócteles. Disponible en presentaciones de 1 libra o 1 kg. Producto seleccionado de cultivos locales para garantizar frescura. </p>
+
           <label>Presentación:</label>
           <select id="unidad-limones">
             <option value="libra">Libra</option>
@@ -279,15 +283,20 @@
         </div>
       </div>
     </div>
-  </div>  
-
+  </div>
+  
 <!-- Modal de Naranjas -->
   <div id="modal-naranjas" class="modal" data-nombre="NARANJAS">
   <div class="modal-contenido">
     <span class="cerrar" onclick="cerrarProducto('naranjas')">&times;</span>
-      
     <div class="detalle-producto">
-      <img src="Fotos editadas/1.Frutas/Citricas/Narajas.png" alt="Naranjas">
+
+        <!-- 📸 Carrusel de imágenes -->
+        <div class="carrusel">
+          <button class="prev" onclick="cambiarImagen('naranjas', -1)">&#10094;</button>
+          <img id="imagen-naranjas" src="Fotos editadas/1.Frutas/Citricas/Narajas.png" alt="Naranjas">
+          <button class="next" onclick="cambiarImagen('naranjas', 1)">&#10095;</button>
+        </div>
         
       <div class="info">
         <h2>NARANJAS</h2>
@@ -320,7 +329,13 @@
   <div class="modal-contenido">
     <span class="cerrar" onclick="cerrarProducto('papas')">&times;</span>
     <div class="detalle-producto">
-      <img src="Fotos editadas/2.Verduras/Tuberculos/Papas.png" alt="Papas">
+
+        <!-- 📸 Carrusel de imágenes -->
+          <div class="carrusel">
+            <button class="prev" onclick="cambiarImagen('papas', -1)">&#10094;</button>
+            <img id="imagen-papas" src="Fotos editadas/2.Verduras/Tuberculos/Papas.png" alt="Papas">
+            <button class="next" onclick="cambiarImagen('papas', 1)">&#10095;</button>
+          </div>
 
       <div class="info">
         <h2>PAPAS</h2>
@@ -386,9 +401,14 @@
 <div id="modal-acelga" class="modal" data-nombre="ACELGA">
   <div class="modal-contenido">
     <span class="cerrar" onclick="cerrarProducto('acelga')">&times;</span>
-      
     <div class="detalle-producto">
-      <img src="Fotos editadas/2.Verduras/Hortalizas/Acelga.png" alt="Acelga">
+
+        <!-- 📸 Carrusel de imágenes -->
+          <div class="carrusel">
+            <button class="prev" onclick="cambiarImagen('acelga', -1)">&#10094;</button>
+            <img id="imagen-acelga" src="Fotos editadas/2.Verduras/Hortalizas/Acelga.png" alt="Acelga">
+            <button class="next" onclick="cambiarImagen('acelga', 1)">&#10095;</button>
+          </div>
 
       <div class="info">
         <h2>ACELGA</h2>
@@ -498,9 +518,14 @@
   <div id="modal-yuca" class="modal" data-nombre="YUCA">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('yuca')">&times;</span>
-      
       <div class="detalle-producto">
-        <img src="Fotos editadas/2.Verduras/Tuberculos/Yuca.png" alt="Yuca">
+
+        <!-- 📸 Carrusel de imágenes -->
+          <div class="carrusel">
+            <button class="prev" onclick="cambiarImagen('yuca', -1)">&#10094;</button>
+            <img id="imagen-yuca" src="Fotos editadas/2.Verduras/Tuberculos/Yuca.png" alt="Yuca">
+            <button class="next" onclick="cambiarImagen('yuca', 1)">&#10095;</button>
+          </div>
 
         <div class="info">
         <h2>YUCA</h2>
@@ -532,9 +557,14 @@
   <div id="modal-espinaca" class="modal" data-nombre="ESPINACA">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('espinaca')">&times;</span>
-      
       <div class="detalle-producto">
-        <img src="Fotos editadas/2.Verduras/Hortalizas/Espinaca.png" alt="Espinaca">
+
+        <!-- 📸 Carrusel de imágenes -->
+          <div class="carrusel">
+            <button class="prev" onclick="cambiarImagen('espinaca', -1)">&#10094;</button>
+            <img id="imagen-espinaca" src="Fotos editadas/2.Verduras/Hortalizas/Espinaca.png" alt="Espinaca">
+            <button class="next" onclick="cambiarImagen('espinaca', 1)">&#10095;</button>
+          </div>
         
         <div class="info">
         <h2>ESPINACA</h2>
@@ -634,9 +664,14 @@
   <div id="modal-piña" class="modal" data-nombre="PIÑA">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('piña')">&times;</span>
-      
       <div class="detalle-producto">
-        <img src="Fotos editadas/1.Frutas/Tropicales/Piña.png" alt="Piña">
+
+        <!-- 📸 Carrusel de imágenes -->
+          <div class="carrusel">
+            <button class="prev" onclick="cambiarImagen('piña', -1)">&#10094;</button>
+            <img id="imagen-piña" src="Fotos editadas/1.Frutas/Tropicales/Piña.png" alt="Piña">
+            <button class="next" onclick="cambiarImagen('piña', 1)">&#10095;</button>
+          </div>
 
         <div class="info">
         <h2>PIÑA</h2>
@@ -698,14 +733,18 @@
     </div>
   </div>
 
-
 <!-- Modal Mandarinas -->
   <div id="modal-mandarinas" class="modal" data-nombre="MANDARINAS">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('mandarinas')">&times;</span>
-      
       <div class="detalle-producto">
-        <img src="Fotos editadas/1.Frutas/Citricas/Mandarinas.png" alt="Mandarinas">
+        
+        <!-- 📸 Carrusel de imágenes -->
+        <div class="carrusel">
+          <button class="prev" onclick="cambiarImagen('mandarinas', -1)">&#10094;</button>
+          <img id="imagen-mandarinas" src="Fotos editadas/1.Frutas/Citricas/Mandarinas.png" alt="Mandarinas">
+          <button class="next" onclick="cambiarImagen('mandarinas', 1)">&#10095;</button>
+        </div>        
 
         <div class="info">
         <h2>MANDARINAS</h2>
@@ -737,9 +776,14 @@
   <div id="modal-mango" class="modal" data-nombre="MANGO">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('mango')">&times;</span>
-      
       <div class="detalle-producto">
-        <img src="Fotos editadas/1.Frutas/Tropicales/Mango.png" alt="Mango">
+
+        <!-- 📸 Carrusel de imágenes -->
+          <div class="carrusel">
+            <button class="prev" onclick="cambiarImagen('mango', -1)">&#10094;</button>
+            <img id="imagen-mango" src="Fotos editadas/1.Frutas/Tropicales/Mango.png" alt="Mango">
+            <button class="next" onclick="cambiarImagen('mango', 1)">&#10095;</button>
+          </div>
 
         <div class="info">
         <h2>MANGO</h2>
@@ -771,9 +815,14 @@
   <div id="modal-lechuga" class="modal" data-nombre="LECHUGA">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('lechuga')">&times;</span>
-      
       <div class="detalle-producto">
-        <img src="Fotos editadas/2.Verduras/Hortalizas/Lechuga.png" alt="Lechuga">
+
+        <!-- 📸 Carrusel de imágenes -->
+          <div class="carrusel">
+            <button class="prev" onclick="cambiarImagen('lechuga', -1)">&#10094;</button>
+            <img id="imagen-lechuga" src="Fotos editadas/2.Verduras/Hortalizas/Lechuga.png" alt="Lechuga">
+            <button class="next" onclick="cambiarImagen('lechuga', 1)">&#10095;</button>
+          </div>
 
         <div class="info">
         <h2>LECHUGA</h2>
@@ -805,7 +854,7 @@
   <div id="modal-pulpadepiña" class="modal" data-nombre="PULPA DE PIÑA">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('pulpadepiña')">&times;</span>
-      
+
       <div class="detalle-producto">
         <img src="Fotos editadas/3.Congelados/Pulpa de fruta/Piña.png" alt="Pulpa de Piña">
 
@@ -975,9 +1024,14 @@
   <div id="modal-papaya" class="modal" data-nombre="PAPAYA">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarProducto('papaya')">&times;</span>
-      
       <div class="detalle-producto">
-        <img src="Fotos editadas/1.Frutas/Tropicales/Papaya.png" alt="Papaya">
+
+      <!-- 📸 Carrusel de imágenes -->
+        <div class="carrusel">
+          <button class="prev" onclick="cambiarImagen('papaya', -1)">&#10094;</button>
+          <img id="imagen-papaya" src="Fotos editadas/1.Frutas/Tropicales/Papaya.png" alt="Papaya">
+          <button class="next" onclick="cambiarImagen('papaya', 1)">&#10095;</button>
+        </div>  
 
         <div class="info">
         <h2>SANDIAS VERANIEGAS</h2>
@@ -1008,10 +1062,15 @@
 <!-- Modal Zanahoria -->
   <div id="modal-zanahorias" class="modal" data-nombre="ZANAHORIAS">
     <div class="modal-contenido">
-      <span class="cerrar" onclick="cerrarProducto('zanahorias')">&times;</span>
-      
+      <span class="cerrar" onclick="cerrarProducto('zanahorias')">&times;</span>     
       <div class="detalle-producto">
-        <img src="Fotos editadas/2.Verduras/Tuberculos/Zanahorias.png" alt="Zanahoria">
+
+        <!-- 📸 Carrusel de imágenes -->
+          <div class="carrusel">
+            <button class="prev" onclick="cambiarImagen('zanahorias', -1)">&#10094;</button>
+            <img id="imagen-zanahorias" src="Fotos editadas/2.Verduras/Tuberculos/Zanahorias.png" alt="Zanahoria">
+            <button class="next" onclick="cambiarImagen('zanahorias', 1)">&#10095;</button>
+          </div>
 
         <div class="info">
         <h2>ZANAHORIAS</h2>
@@ -1039,7 +1098,8 @@
     </div>
   </div>
 
-<!-- OTROS MODALES FUERA DE LOS PRODUCTOS -->
+
+  <!-- OTROS MODALES FUERA DE LOS PRODUCTOS -->
 
 <!-- Modal Carrito -->
 <div id="modal-carrito" class="modal">
@@ -1053,7 +1113,7 @@
     
     <!-- botón abajo -->
     <div class="acciones">
-      <button class="finalizar-compra" onclick="finalizarCompra()">Finalizar compra</button>
+      <button id="btn-finalizar-compra" class="finalizar-compra" onclick="finalizarCompra()">Finalizar compra</button>
     </div>
   </div>
 </div>
@@ -1103,6 +1163,30 @@
   </div>
 </div>
 
+ <!-- Sección MARCA -->
+<section id="nosotros" class="seccion-nosotros">
+  <div class="contenedor-nosotros">
+    <h2>¡CONOCE UN POCO DE NOSOTROS!</h2>
+
+    <div class="mision-vision">
+      <div class="tarjeta">
+        <h3>QUIÉNES SOMOS</h3>
+        <p>Somos una tienda en línea comprometida con ofrecer productos frescos, locales y de calidad, conectando productores con consumidores de manera directa, responsable y amigable con el medio ambiente.</p>
+      </div>
+
+      <div class="tarjeta">
+        <h3>NUESTRA MISIÓN</h3>
+        <p>Facilitar el acceso a productos saludables y sostenibles, apoyando a los agricultores y pequeños productores mediante un comercio justo y transparente.</p>
+      </div>
+
+      <div class="tarjeta">
+        <h3>NUESTRA VISIÓN</h3>
+        <p>Ser una plataforma líder en el impulso del consumo responsable, creando una comunidad que valore el origen, la calidad y el impacto positivo de lo que consume.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Scripts -->
 <script>
   function toggleMenu() {
@@ -1111,68 +1195,69 @@
   }
 </script>
 
+
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  let indiceBanner = 0;
-  const banners = document.querySelectorAll(".banner-slide");
-  const totalBanners = banners.length;
-  let intervaloBanner;
+  document.addEventListener("DOMContentLoaded", () => {
+    let indiceBanner = 0;
+    const banners = document.querySelectorAll(".banner-slide");
+    const totalBanners = banners.length;
+    let intervaloBanner;
 
-  // Función para mostrar el banner actual con transición suave
-  function mostrarBanner(index) {
-    banners.forEach((banner, i) => {
-      banner.style.opacity = i === index ? "1" : "0";
-      banner.style.transition = "opacity 0.8s ease-in-out";
-      banner.classList.toggle("activo", i === index);
-    });
-  }
-
-  // Cambiar al siguiente o anterior banner
-  function cambiarBanner(n) {
-    indiceBanner = (indiceBanner + n + totalBanners) % totalBanners;
-    mostrarBanner(indiceBanner);
-  }
-
-  // Botones de control manual
-  const prev = document.querySelector(".prev");
-  const next = document.querySelector(".next");
-
-  if (prev) prev.addEventListener("click", () => cambiarBanner(-1));
-  if (next) next.addEventListener("click", () => cambiarBanner(1));
-
-  // Rotación automática (cada 8 segundos)
-  intervaloBanner = setInterval(() => cambiarBanner(1), 8000);
-  mostrarBanner(indiceBanner);
-
-  // Funciones del modal
-  window.abrirTutorial = function () {
-    clearInterval(intervaloBanner); // pausa el cambio de banners
-    document.getElementById("modal-tutorial").style.display = "block";
-  };
-
-  window.cerrarTutorial = function () {
-    document.getElementById("modal-tutorial").style.display = "none";
-    intervaloBanner = setInterval(() => cambiarBanner(1), 8000); // reanuda
-  };
-
-  // Cierra el modal al hacer clic fuera del contenido
-  window.onclick = function (event) {
-    const modal = document.getElementById("modal-tutorial");
-    if (event.target === modal) {
-      modal.style.display = "none";
-      intervaloBanner = setInterval(() => cambiarBanner(1), 8000);
+    // Función para mostrar el banner actual con transición suave
+    function mostrarBanner(index) {
+      banners.forEach((banner, i) => {
+        banner.style.opacity = i === index ? "1" : "0";
+        banner.style.transition = "opacity 0.8s ease-in-out";
+        banner.classList.toggle("activo", i === index);
+      });
     }
-  };
 
-  // 🔹 Abre el modal si se hace clic en el segundo banner
-  const segundoBanner = banners[1];
-  if (segundoBanner) {
-    segundoBanner.addEventListener("click", (e) => {
-      e.preventDefault(); // evita ir a productos.html
-      abrirTutorial();
-    });
-  }
-});
+    // Cambiar al siguiente o anterior banner
+    function cambiarBanner(n) {
+      indiceBanner = (indiceBanner + n + totalBanners) % totalBanners;
+      mostrarBanner(indiceBanner);
+    }
+
+    // Botones de control manual
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+
+    if (prev) prev.addEventListener("click", () => cambiarBanner(-1));
+    if (next) next.addEventListener("click", () => cambiarBanner(1));
+
+    // Rotación automática (cada 8 segundos)
+    intervaloBanner = setInterval(() => cambiarBanner(1), 8000);
+    mostrarBanner(indiceBanner);
+
+    // Funciones del modal
+    window.abrirTutorial = function () {
+      clearInterval(intervaloBanner); // pausa el cambio de banners
+      document.getElementById("modal-tutorial").style.display = "block";
+    };
+
+    window.cerrarTutorial = function () {
+      document.getElementById("modal-tutorial").style.display = "none";
+      intervaloBanner = setInterval(() => cambiarBanner(1), 8000); // reanuda
+    };
+
+    // Cierra el modal al hacer clic fuera del contenido
+    window.onclick = function (event) {
+      const modal = document.getElementById("modal-tutorial");
+      if (event.target === modal) {
+        modal.style.display = "none";
+        intervaloBanner = setInterval(() => cambiarBanner(1), 8000);
+      }
+    };
+
+    // 🔹 Abre el modal si se hace clic en el segundo banner
+    const segundoBanner = banners[1];
+    if (segundoBanner) {
+      segundoBanner.addEventListener("click", (e) => {
+        e.preventDefault(); // evita ir a productos.html
+        abrirTutorial();
+      });
+    }
+  });
 </script>
 
   <!-- Vincular el JS -->
