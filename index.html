@@ -29,11 +29,15 @@
 
 
   <!-- Carrito -->
-  <nav>
-    <a href="#" class="carrito" onclick="abrirCarrito()">
-      <img src="Imagenes/carrito.png" alt="Carrito de compras">
-    </a>
+<nav>
+  <a href="#" class="carrito" onclick="abrirCarrito()">
+    <img src="Imagenes/carrito.png" alt="Carrito de compras">
+
+    <!-- 🔴 Badge del carrito -->
+    <span id="badge-carrito" class="badge-carrito">0</span>
+  </a>
 </nav>
+
 
 </header>
 
@@ -51,6 +55,20 @@
     <!-- Segundo banner: abre la ventana emergente -->
     <a href="#" onclick="abrirTutorial()">
       <img src="Imagenes/banner2.png" alt="Frutas Tropicales">
+    </a>
+  </div>
+
+    <div class="banner-slide">
+    <!-- Segundo banner: abre la ventana emergente -->
+    <a href="#" onclick="abrirTutorial()">
+      <img src="Imagenes/banner3.png" alt="Combos">
+    </a>
+  </div>
+
+      <div class="banner-slide">
+    <!-- Segundo banner: abre la ventana emergente -->
+    <a href="#" onclick="abrirTutorial()">
+      <img src="Imagenes/banner4.png" alt="Combos">
     </a>
   </div>
 
@@ -265,7 +283,7 @@
             <strong data-precio-libra="1800">$1.800</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
             <strong data-precio-kg="3500">$3.500</strong> <strong>/ kilogramo</strong>
           </p>
-          <p><b>Descripción:</b> Limón fresco, ideal para jugos, aderezos y cócteles. Disponible en presentaciones de 1 libra o 1 kg. Producto seleccionado de cultivos locales para garantizar frescura. </p>
+          <b>Descripción:</b> Limón fresco proveniente principalmente de cultivos de Tolima, Antioquia y Santander, reconocidos por su excelente acidez natural. Rico en vitamina C, ideal para jugos, aderezos y preparaciones culinarias. Se selecciona y empaca el mismo día para garantizar su frescura, aroma y jugosidad.</p>
 
           <label>Presentación:</label>
           <select id="unidad-limones">
@@ -304,7 +322,7 @@
         <strong data-precio-libra="1500">$1.500</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
         <strong data-precio-kg="2800">$2.800</strong> <strong>/ kilogramo</strong> 
       </p>
-        <p><b>Descripción:</b> Naranja jugosa, rica en vitamina C, perfecta para jugos naturales y consumo directo. Presentación: 1 libra o 1 kg</p>
+        <p><b>Descripción:</b> Naranja jugosa originaria de zonas citrícolas de Valle del Cauca y Meta, caracterizada por su dulzor natural y alto contenido de vitamina C. Perfectas para jugos naturales y consumo directo. Siempre frescas gracias a un proceso de selección que garantiza piezas firmes y aromáticas.</p>
         
         <label>Presentación:</label>
         <select>
@@ -343,7 +361,7 @@
         <strong data-precio-libra="1600">$1.600</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
         <strong data-precio-kg="3800">$3.800</strong> <strong>/ kilogramo</strong>
       </p>
-        <p><b>Descripción:</b> Papa seleccionada, ideal para asar, freír o guisar. Presentación: 1 libra o 1 kg</p>
+        <p><b>Descripción:</b> Papa fresca cultivada en las zonas frías de Cundinamarca, Boyacá y Nariño, reconocidas por la calidad del tubérculo. Rica en energía y fibra, ideal para asar, freír, cocinar o preparar puré. Se seleccionan papas de buen tamaño y textura para asegurar una cocción pareja.</p>
 
         <label>Presentación:</label>
         <select>
@@ -377,7 +395,7 @@
         <strong data-precio-libra="5000">$5.000</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
         <strong data-precio-kg="9500">$9.500</strong> <strong>/ kilogramo</strong>
       </p>
-        <p><b>Descripción:</b> Pulpa de lulo natural, ácida y refrescante, perfecta para jugos típicos. Presentación: 1 libra o 1 kg. </p>
+        <p><b>Descripción:</b> Pulpa de lulo natural proveniente de cultivos de Huila y Nariño, regiones donde el clima favorece su sabor ácido y refrescante. Perfecta para jugos típicos, postres o bebidas frías. Congelada inmediatamente después de procesarse para preservar su color y aroma.</p>
         
         <label>Presentación:</label>
         <select>
@@ -416,7 +434,7 @@
         <strong data-precio-libra="1600">$1.600</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
         <strong data-precio-kg="3000">$3.000</strong> <strong>/ kilogramo</strong>
       </p>
-        <p><b>Descripción:</b> Acelga fresca de hojas grandes, perfecta para sopas y guisos. Presentación: 1 libra o 1 kg. </p>
+        <p><b>Descripción:</b> Acelga fresca cultivada en huertas de Cundinamarca y Antioquia, de hojas grandes y textura suave. Rica en hierro y vitaminas A y K. Ideal para sopas, guisos y preparaciones saludables. Se entrega seleccionada y lavada para garantizar su frescura.</p>
         
         <label>Presentación:</label>
         <select>
@@ -449,7 +467,7 @@
         <p>
           <strong data-precio-combo="14500">$14.500</strong> / 1 libra de cada producto
         </p>
-        <p><b>Descripción:</b> Contiene manzana, lechuga y tomate. Opción equilibrada para ensaladas y refrigerios saludables.</p>
+        <p><b>Descripción:</b> Combo equilibrado compuesto por manzana (Boyacá), lechuga (Cundinamarca) y tomate (Antioquia). Pensado para ensaladas frescas, refrigerios y preparaciones ligeras. Todo el combo se selecciona el mismo día para mantener calidad y crocancia.</p>
 
         <!-- selector de cantidad -->
         <div class="cantidad">
@@ -475,7 +493,7 @@
        <div class="info">
         <h2>COMBO FRESCURA</h2>
         <p><strong data-precio-combo="11500">$11.500 </strong> &nbsp;&nbsp; <strong>/ Combo de 3 productos</strong></p>
-        <p><b>Descripción:</b> Contiene: Papas, espinaca y zanahoria. Perfecta combinación de hortalizas frescas para tus comidas diarias. Incluye 1 libra de cada producto. </p>
+        <p><b>Descripción:</b> Incluye papa (Boyacá), espinaca (Cundinamarca) y zanahoria (Tolima). Una mezcla perfecta de hortalizas frescas y nutritivas para tus comidas diarias. Cada producto se entrega en óptimo estado de frescura, limpio y listo para cocinar.</p>
  
         <div class="cantidad">
           <button onclick="cambiarCantidad('combofrescura', -1)">-</button>
@@ -500,7 +518,7 @@
       <div class="info">
         <h2>COMBO ENERGÍA</h2>
         <p><strong data-precio-combo="13000">$13.000 </strong> &nbsp;&nbsp; <strong>Combo de 3 productos frescos</strong></p>
-        <p><b>Descripción:</b> Contiene: Mango, banano y mandarina. Selección de frutas tropicales llenas de sabor y vitaminas. Incluye 1 libra de cada producto. </p>
+        <p><b>Descripción:</b> Combinación tropical con mango (Magdalena), banano (Urabá – Antioquia) y mandarina (Meta). Frutas dulces y llenas de vitaminas ideales para snacks, jugos o ensaladas. Seleccionadas por su buen color y frescura.</p>
  
         <div class="cantidad">
           <button onclick="cambiarCantidad('comboenergia', -1)">-</button>
@@ -533,7 +551,7 @@
         <strong data-precio-libra="1800">$1.800</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
         <strong data-precio-kg="3400">$3.400</strong> <strong>/ kilogramo</strong>
       </p>
-        <p><b>Descripción:</b>  Yuca fresca, lista para cocinar frita, sancochada o en puré. Presentación: 1 libra o 1 kg.</p>
+        <p><b>Descripción:</b> Yuca fresca proveniente de cultivos de Casanares y Meta, reconocidos por su textura suave y fácil cocción. Ideal para freír, sancochos, sopas o puré. Se entrega firme, pelada y lista para preparar.</p>
 
           <label>Presentación:</label>
           <select>
@@ -572,7 +590,7 @@
           <strong data-precio-libra="1500">$1.500</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="2800">$2.800</strong> <strong>/ kilogramo</strong>
         </p>
-        <p><b>Descripción:</b> Espinaca fresca, lista para ensaladas, sopas y guisos. Presentación: bolsa de 1 libra o 1 kg.</p>
+        <p><b>Descripción:</b> Espinaca de hojas verdes y tiernas cultivada principalmente en Cundinamarca y Antioquia. Rica en hierro, fibra y antioxidantes. Perfecta para ensaladas, cremas y guisos. Se selecciona fresca y se empaca el mismo día.</p>
 
           <label>Presentación:</label>
           <select>
@@ -606,7 +624,7 @@
           <strong data-precio-libra="5000">$5.000</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="9500">$9.500</strong> <strong>/ kilogramo</strong>
         </p>
-        <p><b>Descripción:</b> Brócoli seleccionado, cortado y congelado para conservar su frescura acompañado de piña picada y tomate. Presentación: 1 libra o 1 kg.</p>
+        <p><b>Descripción:</b> Mezcla de brócoli cultivado en Nariño y Cundinamarca, acompañado de piña (Santander) y tomate (Antioquia). El brócoli se corta y congela para preservar nutrientes y frescura. Ideal para salteados, bowls o comidas rápidas saludables.</p>
   
           <label>Presentación:</label>
           <select>
@@ -640,7 +658,7 @@
           <strong data-precio-libra="4500">$4.500</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="8500">$8.500</strong> <strong>/ kilogramo</strong>
         </p>
-          <p><b>Descripción:</b> Pulpa de fruta natural, lista para jugos y postres. Presentación: bolsa de 1 libra o 1 kg (congelada).</p>
+          <p><b>Descripción:</b> Pulpa natural de mango proveniente de Magdalena y Cesar, zonas conocidas por producir mangos dulces y aromáticos. Perfecta para jugos, postres o smoothies. Congelada para mantener color y sabor sin conservantes.</p>
 
           <label>Presentación:</label>
           <select>
@@ -679,7 +697,7 @@
           <strong data-precio-libra="1200">$1.200</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="2200">$2.200</strong> <strong>/ kilogramo</strong>
         </p>
-        <p><b>Descripción:</b> Piña dulce y jugosa, lista para consumo o jugos. Se entrega pelada y lista para ser refrigerada. Presentación: 1 libra o 1 kg</p>
+        <p><b>Descripción:</b> Piña dulce y jugosa cultivada en Santander y Meta, ideal para jugos, consumo directo o postres. Se entrega pelada y lista para refrigerar. Fruta fresca, seleccionada por su aroma y color dorado.</p>
 
           <label>Presentación:</label>
           <select>
@@ -713,7 +731,7 @@
           <strong data-precio-libra="1200">$1.200</strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="18500">$18.500</strong> <strong>/ kilogramo</strong>
         </p>
-        <p><b>Descripción:</b> Uvas frescas, dulces y listas para compartir en familia. Presentación: 1 libra o 1 kg.</p>
+        <p><b>Descripción:</b> Uvas frescas y dulces originarias de temperadas zonas de Boyacá y Tolima durante la temporada navideña. Perfectas para compartir, decorar mesas y preparar postres. Se entregan firmes y seleccionadas para garantizar calidad.</p>
 
           <label>Presentación:</label>
           <select>
@@ -752,7 +770,7 @@
           <strong data-precio-libra="1600">$1.600 </strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="3000">$3.000</strong> <strong>/ kilogramo</strong>
         </p>
-        <p><b>Descripción:</b> Mandarina dulce y fácil de pelar, recomendada como snack saludable. Presentación: 1 libra o 1 kg.</p>
+        <p><b>Descripción:</b> Mandarina dulce proveniente de Meta y Cundinamarca, de cáscara suave y fácil de pelar. Rica en vitamina C, ideal como snack saludable. Frescura garantizada gracias a una selección cuidadosa.</p>
 
           <label>Presentación:</label>
           <select>
@@ -791,7 +809,7 @@
           <strong data-precio-libra="1200">$1.200 </strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="2200">$2.200</strong> <strong>/ kilogramo</strong>
         </p>
-          <p><b>Descripción:</b> Mango maduro y fresco, excelente para jugos, postres y ensaladas. Disponible en 1 libra o 1 kg.</p>
+          <p><b>Descripción:</b> Mango fresco cultivado en Magdalena, Antioquia y Cesar, caracterizado por su dulzor natural y textura suave. Ideal para jugos, ensaladas, postres o consumo directo. Se escogen piezas en su punto justo de maduración.</p>
 
           <label>Presentación:</label>
           <select>
@@ -830,7 +848,7 @@
           <strong data-precio-libra="1800">$1.800 </strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="3400">$3.400</strong> <strong>/ kilogramo</strong>
         </p>
-          <p><b>Descripción:</b> Lechuga crujiente y fresca, ideal para ensaladas y wraps. Presentación: 1 libra o 1 kg.</p>
+          <p><b>Descripción:</b> Lechuga fresca y crujiente proveniente de cultivos locales, seleccionada hoja por hoja para asegurar calidad y limpieza. Su textura suave y su sabor ligero la hacen ideal para ensaladas, wraps, acompañamientos y preparaciones saludables del día a día. Conserva excelente frescura gracias a su cosecha reciente.</p>
 
           <label>Presentación:</label>
           <select>
@@ -864,7 +882,7 @@
           <strong data-precio-libra="4000">$4.000 </strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="8500">$8.500</strong> <strong>/ kilogramo</strong>
         </p>
-          <p><b>Descripción:</b> Pulpa de piña natural, sin azúcar añadida. Presentación: 1 libra o 1 kg.</p>
+          <p><b>Descripción:</b> Pulpa de piña 100% natural, preparada a partir de piñas maduras y aromáticas seleccionadas en su punto justo de dulzura. No contiene azúcar añadida ni conservantes. Perfecta para jugos, batidos, postres y recetas caseras. Su proceso de congelación mantiene intacto su sabor tropical y fresco.</p>
 
           <label>Presentación:</label>
           <select>
@@ -898,7 +916,7 @@
           <strong data-precio-libra="4200">$4.200 </strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="8000">$8.000</strong> <strong>/ kilogramo</strong>
         </p>
-          <p><b>Descripción:</b> Maíz desgranado y congelado, ideal para sopas, arepas y guisos. Presentación: 1 libra o 1 kg.</p>
+          <p><b>Descripción:</b> Maíz tierno desgranado cuidadosamente de mazorcas jóvenes para conservar su textura suave y dulzor natural. Ideal para sopas, arepas, guisos, cremas y recetas rápidas. Su presentación congelada asegura frescura, color y sabor en cada preparación, listo para usar sin procesos adicionales.</p>
 
           <label>Presentación:</label>
           <select>
@@ -932,7 +950,7 @@
           <strong data-precio-libra="4500">$4.500 </strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="8500">$8.500</strong> <strong>/ kilogramo</strong>
         </p>
-          <p><b>Descripción:</b> Mezcla congelada de zanahoria, arveja y habichuela, lista para cocinar. Presentación: 1 libra o 1 kg.</p>
+          <p><b>Descripción:</b> Mezcla de zanahoria, arveja y habichuela recién seleccionadas, lavadas y congeladas para mantener su valor nutritivo. Esta combinación práctica y colorida es perfecta para arroces, sopas, ensaladas calientes y preparaciones rápidas sin perder calidad ni sabor.</p>
 
           <label>Presentación:</label>
           <select>
@@ -966,7 +984,7 @@
           <strong data-precio-libra="7000">$7.000 </strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="13500">$13.500</strong> <strong>/ kilogramo</strong>
         </p>
-        <p><b>Descripción:</b> Durazno fresco, jugoso y aromático. Perfecto para jugos, postres y consumo directo. Presentación: 1 libra o 1 kg.</p>
+        <p><b>Descripción:</b> Duraznos jugosos, dulces y aromáticos cosechados en temporada para asegurar la mejor textura y sabor. Ideales para jugos, postres, compotas, tortas o consumo directo. Su pulpa firme y natural aroma frutal los hacen perfectos para disfrutar frescos o en preparaciones caseras.</p>
 
           <label>Presentación:</label>
           <select>
@@ -1000,7 +1018,7 @@
           <strong data-precio-libra="4200">$4.200 </strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="8000">$8.000</strong> <strong>/ kilogramo</strong>
         </p>
-        <p><b>Descripción:</b>Sandía jugosa y refrescante, ideal para días calurosos. Presentación: 1 libra o 1 kg.</p>
+        <p><b>Descripción:</b> Sandías frescas y muy jugosas seleccionadas por su dulzura natural y su pulpa vibrante. Perfectas para días calurosos, jugos refrescantes, ensaladas frutales y snacks saludables. Cosechadas en su punto óptimo para garantizar frescura y un sabor verdaderamente refrescante.</p>
 
           <label>Presentación:</label>
           <select>
@@ -1034,12 +1052,12 @@
         </div>  
 
         <div class="info">
-        <h2>SANDIAS VERANIEGAS</h2>
+        <h2>PAPAYA</h2>
         <p>
           <strong data-precio-libra="1000">$1.000 </strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="1900">$1.900 </strong> <strong>/ kilogramo</strong>
         </p>
-          <p><b>Descripción:</b> Papaya fresca, con pulpa suave y nutritiva. Rica en fibra y vitaminas. Presentación: 1 libra o 1 kg.</p>
+          <p><b>Descripción:</b> Papayas de pulpa suave y dulce, cosechadas con el grado de madurez ideal para ofrecer una textura cremosa y un sabor agradable. Ricas en fibra, vitaminas y enzimas naturales que favorecen la digestión. Excelente para jugos, ensaladas, batidos o consumo directo.</p>
 
           <label>Presentación:</label>
           <select>
@@ -1078,7 +1096,7 @@
           <strong data-precio-libra="1200">$1.200 </strong> <strong>/ libra</strong> &nbsp;&nbsp; 
           <strong data-precio-kg="2200">$2.200 </strong> <strong>/ kilogramo</strong>
         </p>
-          <p><b>Descripción:</b> Zanahoria fresca y crujiente, rica en betacarotenos. Ideal para jugos, sopas y ensaladas. Presentación: 1 libra o 1 kg</p>
+          <p><b>Descripción:</b> Zanahorias frescas, firmes y llenas de color, provenientes de cultivos locales. Ricas en betacarotenos y nutrientes esenciales, ideales para jugos, sopas, ensaladas y preparaciones salteadas. Se seleccionan cuidadosamente para garantizar textura crujiente y un sabor natural, dulce y agradable.</p>
 
           <label>Presentación:</label>
           <select>
@@ -1181,11 +1199,46 @@
 
       <div class="tarjeta">
         <h3>NUESTRA VISIÓN</h3>
-        <p>Ser una plataforma líder en el impulso del consumo responsable, creando una comunidad que valore el origen, la calidad y el impacto positivo de lo que consume.</p>
+        <p>Ser una plataforma líder en el impulso dentro de las principales ciudades del país, que promueva el consumo responsable y saludable. Pero, que permita a más personas aprovechar el alcance digital para su día a día.</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Sección TESTIMONIOS -->
+
+<section class="testimonios">
+  <h2>Testimonios</h2>
+
+  <!-- Lista donde aparecerán los comentarios -->
+  <div id="lista-testimonios" class="lista-testimonios">
+    <!-- Comentarios placeholder -->
+    <div class="testimonio">
+      <h4>María G.</h4>
+      <p>Productos muy frescos y entregas rápidas. ¡Estoy encantada!</p>
+    </div>
+
+    <div class="testimonio">
+      <h4>Juan P.</h4>
+      <p>Excelente servicio, todo llega empacado y en perfecto estado.</p>
+    </div>
+  </div>
+
+      <div class="testimonio">
+      <h4>Fabian U.</h4>
+      <p>Fácil modo de compra, el producto llego en buen estado y en las cantidades que necesitaba ¡Muchas gracias!</p>
+    </div>
+  </div>
+
+
+  <!-- Formulario para agregar testimonios -->
+  <div class="form-testimonio">
+    <input type="text" id="nombre-testimonio" placeholder="Nombre">
+    <textarea id="comentario-testimonio" placeholder="Comentario"></textarea>
+    <button onclick="agregarTestimonio()">Enviar</button>
+  </div>
+</section>
+
 
 <!-- Scripts -->
 <script>

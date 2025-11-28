@@ -64,6 +64,32 @@ header nav .carrito img:hover {
   transform: scale(1.1);
 }
 
+/* 🔴 Badge sobre el icono del carrito */
+.badge-carrito {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: rgb(222, 53, 41);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  height: 18px;
+  min-width: 18px;
+  padding: 0 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* No interfiere con clics */
+}
+
+/* Necesario para que el badge se posicione respecto al enlace */
+.carrito {
+  position: relative;
+  display: inline-block;
+}
+
+
 /* --- Buscador --- */
 .buscador {
   display: flex;
@@ -335,13 +361,21 @@ header nav .carrito img:hover {
 }
 
 .producto {
-  background: #e6f8e6;
-  border-radius: 10px;
+  background: #e9f7e9;
+  border-radius: 14px;
   padding: 15px;
   text-align: center;
-  width: 220px;
-  box-shadow: 0px 2px 8px #3b8d2d;
+  width: 230px;
+  transition: 0.25s ease;
+  box-shadow: 0px 4px 10px rgba(0, 80, 25, 0.18);
+  border: 1px solid #cde9cd;
 }
+
+.producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 16px rgba(0, 80, 25, 0.22);
+}
+
 
 .producto img {
   width: 100%;
@@ -351,14 +385,41 @@ header nav .carrito img:hover {
 }
 
 .producto h3 {
-  color: #3b8d2d;
-  margin: 10px 0 5px;
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 900;
+  color: #2d7a2d;
+  border: 1px solid #b8dcb8;
+  margin: 12px 0 8px;
 }
+
 
 .producto p {
   font-size: 18px;
   margin: 0 0 10px;
 }
+
+.producto button {
+  background-color: #ff9f1c;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+  transition: 0.2s ease;
+}
+
+.producto button:hover {
+  background-color: #e48b0b;
+  transform: scale(1.03);
+}
+
 
 button {
   background-color: #f4a340;
@@ -373,6 +434,57 @@ button {
 button:hover {
   background-color: #e88f20;
 }
+
+.btn-carrito {
+  background: #f7a726;
+  border: none;
+  padding: 14px 25px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 18px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  transition: 0.2s ease;
+}
+
+.btn-carrito:hover {
+  background: #e38f10;
+  transform: scale(1.03);
+}
+
+.info h2 {
+  color: #2d7a2d;
+  font-size: 26px;
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+
+.info p {
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+.cantidad button {
+  background: #ffa723;
+  border: none;
+  padding: 10px 14px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+.cantidad span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d7a2d;
+  margin: 0 10px;
+}
+
 
 /*Ventana limones*/
 .modal {
@@ -669,6 +781,72 @@ button:hover {
 #modal-tutorial h2 {
   margin-bottom: 10px;
 }
+
+/* TESTIMONIOS*/ 
+
+.testimonios {
+  background: #e6f8e6;
+  padding: 25px;
+  margin: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px #3b8d2d;
+}
+
+.testimonios h2 {
+  color: #3b8d2d;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.lista-testimonios {
+  margin-bottom: 20px;
+}
+
+.testimonio {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0px 1px 4px rgb(0 0 0 / 20%);
+}
+
+.testimonio h4 {
+  margin: 0;
+  color: #3b8d2d;
+}
+
+.testimonio p {
+  margin: 5px 0 0;
+}
+
+.form-testimonio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-testimonio input,
+.form-testimonio textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.form-testimonio button {
+  background-color: #f4a340;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-testimonio button:hover {
+  background-color: #e88f20;
+}
+
 
 /* SECCIÓN MARCA*/ 
 

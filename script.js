@@ -170,39 +170,81 @@ function cambiarCantidad(id, valor) {
   cantidadElem.innerText = cantidad;
 }
 
-/* 🛍️ Agregar productos al carrito */
+/* 🛍️ Agregar productos al carrito (mejorado: combina iguales y valida datos) */
 function agregarAlCarrito(id) {
   const modal = document.getElementById("modal-" + id);
-  const cantidad = parseInt(document.getElementById("cantidad-" + id).innerText);
+  const cantidad = parseInt(document.getElementById("cantidad-" + id).innerText, 10) || 0;
 
-  if (cantidad > 0) {
-    const nombre = modal.dataset.nombre;
-    const tipo = modal.dataset.tipo || "producto";
-    let presentacion = "";
-    let precio = 0;
+  if (cantidad <= 0) {
+    // nada que agregar
+    return;
+  }
 
-    if (tipo === "combo") {
-      presentacion = "combo";
-      precio = parseInt(modal.querySelector("[data-precio-combo]").dataset.precioCombo);
+  const nombre = modal.dataset.nombre;
+  const tipo = modal.dataset.tipo || "producto";
+  let presentacion = "";
+  let precio = 0;
+
+  if (tipo === "combo") {
+    presentacion = "combo";
+    precio = Number(modal.querySelector("[data-precio-combo]")?.dataset.precioCombo) || 0;
+  } else {
+    presentacion = modal.querySelector("select")?.value || "unidad";
+    if (presentacion === "libra") {
+      precio = Number(modal.querySelector("[data-precio-libra]")?.dataset.precioLibra) || 0;
+    } else if (presentacion === "kg") {
+      precio = Number(modal.querySelector("[data-precio-kg]")?.dataset.precioKg) || 0;
     } else {
-      presentacion = modal.querySelector("select").value;
-      if (presentacion === "libra") {
-        precio = parseInt(modal.querySelector("[data-precio-libra]").dataset.precioLibra);
-      } else if (presentacion === "kg") {
-        precio = parseInt(modal.querySelector("[data-precio-kg]").dataset.precioKg);
-      }
+      // intenta tomar un precio por defecto si hay uno
+      precio = Number(modal.querySelector("[data-precio]")?.dataset.precio) || precio;
     }
+  }
 
+  if (precio === 0) {
+    console.warn(`Producto "${nombre}" agregado con precio 0 — revisa los data-attributes del modal id=${id}`);
+  }
+
+  // Buscar si ya existe el mismo producto+presentacion -> sumar cantidad
+  const existenteIndex = carrito.findIndex(item => item.nombre === nombre && item.presentacion === presentacion);
+  if (existenteIndex > -1) {
+    // actualizar cantidad y total
+    carrito[existenteIndex].cantidad = Number(carrito[existenteIndex].cantidad) + cantidad;
+    carrito[existenteIndex].precio = precio; // opcional: actualizar precio si cambió
+    carrito[existenteIndex].total = carrito[existenteIndex].cantidad * carrito[existenteIndex].precio;
+  } else {
     const total = precio * cantidad;
     carrito.push({ nombre, cantidad, presentacion, precio, tipo, total });
-
-    mostrarCarrito();
-    cerrarProducto(id);
   }
+
+  mostrarCarrito();
+  actualizarBadge();
+  cerrarProducto(id);
 }
 
+/* 🗑️ Eliminar un producto del carrito (sin cambios lógicos, sólo actualiza badge) */
+function eliminarDelCarrito(index) {
+  carrito.splice(index, 1);
+  mostrarCarrito();
+  actualizarBadge();
+}
+
+/* 🔴 Actualizar numerito del carrito (mejor manejo de tipos) */
+function actualizarBadge() {
+  const badge = document.getElementById("badge-carrito");
+  if (!badge) return;
+
+  const totalItems = carrito.reduce((sum, item) => sum + (Number(item.cantidad) || 0), 0);
+  badge.textContent = totalItems;
+  badge.style.display = totalItems > 0 ? "flex" : "none";
+}
+
+/* Inicializar estado del badge al cargar la página */
+window.addEventListener("DOMContentLoaded", () => {
+  actualizarBadge();
+});
+
 /* 🛒 Mostrar contenido del carrito */
-function mostrarCarrito() {
+function mostrarCarrito()  {
   const listaCarrito = document.getElementById("lista-carrito");
   const btnFinalizar = document.getElementById("btn-finalizar-compra");
 
@@ -240,11 +282,6 @@ function mostrarCarrito() {
   }
 }
 
-/* 🗑️ Eliminar un producto del carrito */
-function eliminarDelCarrito(index) {
-  carrito.splice(index, 1);
-  mostrarCarrito();
-}
 
 /* 🔍 Abrir y cerrar el carrito */
 function abrirCarrito() {
@@ -267,6 +304,17 @@ function finalizarCompra() {
   document.getElementById("modal-pedido").style.display = "flex";
   document.getElementById("modal-carrito").style.display = "none";
 }
+
+/* 🔴 Actualizar numerito del carrito */
+function actualizarBadge() {
+  const badge = document.getElementById("badge-carrito");
+  const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+  badge.textContent = totalItems;
+
+  // Ocultar si no hay productos
+  badge.style.display = totalItems > 0 ? "flex" : "none";
+}
+
 
 /* ❌ Cerrar el modal de pedido */
 function cerrarPedido() {
@@ -309,11 +357,15 @@ ${detalle}
   carrito = [];
   document.querySelectorAll("[id^='cantidad-']").forEach(elem => elem.innerText = "0");
   mostrarCarrito();
+  actualizarBadge();
+
 
   // Cerrar modales
   document.getElementById("modal-pedido").style.display = "none";
   document.getElementById("modal-carrito").style.display = "none";
 });
+
+
 
 
 // Abrir tutorial desde el banner
@@ -326,6 +378,36 @@ document.querySelector(".banner a").addEventListener("click", e => {
 function cerrarTutorial() {
   document.getElementById("modal-tutorial").style.display = "none";
 }
+
+
+// TESTIMONIOS
+function agregarTestimonio() {
+  const nombre = document.getElementById("nombre-testimonio").value.trim();
+  const comentario = document.getElementById("comentario-testimonio").value.trim();
+
+  if (nombre === "" || comentario === "") {
+    alert("Por favor completa ambos campos.");
+    return;
+  }
+
+  // Crear contenedor
+  const nuevoTestimonio = document.createElement("div");
+  nuevoTestimonio.classList.add("testimonio");
+  
+  nuevoTestimonio.innerHTML = `
+    <h4>${nombre}</h4>
+    <p>${comentario}</p>
+  `;
+
+  // Insertar al inicio de la lista
+  const lista = document.getElementById("lista-testimonios");
+  lista.insertBefore(nuevoTestimonio, lista.firstChild);
+
+  // Limpiar campos
+  document.getElementById("nombre-testimonio").value = "";
+  document.getElementById("comentario-testimonio").value = "";
+}
+
 
 
 
